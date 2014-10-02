@@ -17,6 +17,8 @@ dir = conf.dir
 con = conf.con
 bad = blacklist.bad
 
+list = {}
+
 def mysql():
 	Headlines = {}
 	with con:
@@ -28,6 +30,8 @@ def mysql():
 
 	    	for row in rows:
         		Headlines.update({row["Headlines"] : row["Newspaper"]})
+
+			con.commit()
 
 	return Headlines
 
@@ -41,8 +45,22 @@ def find(word):
 			count = count + 1
 	return count
 
-list = {}
-def words():
+def mydata():
+	with con:
+    
+		cur = con.cursor()
+		cur.execute("DROP TABLE IF EXISTS data%s" % str(time.strftime("%Y%m%d")))
+    
+		cur.execute("CREATE TABLE data%s(Word VARCHAR(35), Cluster VARCHAR(4))" % \
+    			str(time.strftime("%Y%m%d")))
+		
+		for Cluster in list:
+			cur.execute("INSERT INTO data%s(Word, Cluster) VALUES('%s', '%s')" % \
+				(str(time.strftime("%Y%m%d")), str(Cluster), str(list[Cluster])))
+		
+		con.commit()
+
+def main():
 	global list
 	global data
         
@@ -63,4 +81,5 @@ def words():
  		if list[l] > 6 and l not in bad:
  			print l + ": " + str(list[l])
 
-words()
+main()
+mydata()

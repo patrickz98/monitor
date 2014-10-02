@@ -28,7 +28,15 @@ def ntv():
 		if "'" in title: title = re.sub(r"'", "", title)
 		if "„" in title: title = re.sub(r"„", "", title)
 		if "“" in title: title = re.sub(r"“", "", title)
-		if "-" in title: title = re.sub(r"-", " ", title)
+#		if "-" in title: title = re.sub(r"-", " ", title)
+
+		if "ß" in title: title = re.sub(r"ß", "ss", title)
+		if "Ä" in title: title = re.sub(r"Ä", "Ae", title)
+		if "ä" in title: title = re.sub(r"ä", "ae", title)
+		if "Ü" in title: title = re.sub(r"Ü", "Ue", title)
+		if "ü" in title: title = re.sub(r"ü", "ue", title)
+		if "Ö" in title: title = re.sub(r"Ö", "Oe", title)
+		if "ö" in title: title = re.sub(r"ö", "oe", title)
 
 		title = regexhtml.main(title)
 
