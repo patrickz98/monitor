@@ -7,7 +7,6 @@ import MySQLdb as mdb
 from collections import OrderedDict
 
 import conf 
-import regex
 import blacklist
 import header
 
