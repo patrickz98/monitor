@@ -14,7 +14,9 @@ backup:
 lib:
 	curl "https://raw.githubusercontent.com/nnnick/Chart.js/master/Chart.js" 1> Chart.js 2>/dev/null
 
-Web: lib mysql all
+web: lib mysql all
+	python analytics-html.py
+
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
 
