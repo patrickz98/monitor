@@ -55,4 +55,3 @@ def ntv():
 	    			(str(time.strftime("%Y%m%d")), str(word), 'ntv', str(find[word])))
 
 		con.commit()
-	con.close()

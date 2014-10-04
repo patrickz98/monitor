@@ -7,14 +7,18 @@ import MySQLdb as mdb
 from collections import OrderedDict
 
 import conf 
+import blacklist
 import header
+import htmlgenerator
 
 header.main()
 
 con = conf.con
-bad = conf.bad
+bad = blacklist.bad
 
 list = {}
+
+html = open("aktuell.html", "w+")
 
 def mysql():
 	Headlines = {}
@@ -69,7 +73,40 @@ def main():
 				if find(c) > 6:
 					list.update({c:find(c)})
 
-
+	html.write('<!doctype html>\n')
+	html.write('<html>\n')
+	html.write('	<head>\n')
+	html.write('		<title>Monitor</title>\n')
+	html.write('		<link rel="icon" type="image/x-icon" href="news.ico" />\n')
+	html.write('		<link rel="apple-touch-icon" href="news.png"/>\n')
+	html.write('\n')
+	html.write('		<style type="text/css">\n' )
+	html.write('			a:link { text-decoration:none; font-weight:bold; color:#000000; }\n')
+	html.write('			a:visited { text-decoration:none; font-weight:bold; color:#0063b0; }\n')
+	html.write('		</style>\n')
+	html.write('	</head>\n')
+	html.write('	<body>\n')
+	html.write('\n')
+	html.write('		<h1>' 'Monitor: ' + time.strftime('%H:%M %d.%m.%Y') + '</h1>\n')
+	html.write('\n')
+	html.write('		<p style="font-size:50px;"></p>\n')
+	 
+	
+	for word in list:
+		if list[word] >= 8 and word not in bad:
+			
+			if "\"" in word: word = re.sub(r"\"", "", word)
+			
+			html.write(('		<p style="font-size:%dpx;"> ' % int(list[word] * 5)) + \
+						('<a href="./html/%s.html">' % str(word)) + str(word) + ': ' + str(list[word]) + \
+						'</a></p>\n')
+			print word
+			### Html Generierung ####
+			htmlgenerator.main(word)
+	
+	html.write('	</body>\n')
+	html.write('</html>\n')
+	html.close()
 	list = OrderedDict(sorted(list.items(), key=lambda x:x[1]))
 	
 	print time.strftime("%H:%M %d.%m.%Y")

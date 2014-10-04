@@ -76,4 +76,3 @@ def sueddeutsche():
    				(str(time.strftime("%Y%m%d")), str(word), 'sueddeutsche', str(find2[word])))
 	
 		con.commit()
-	con.close()

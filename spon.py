@@ -54,4 +54,3 @@ def spon():
 			cur.execute("INSERT INTO news%s(Headlines, Newspaper, link) VALUES('%s', '%s', '%s')" % \
 				(str(time.strftime("%Y%m%d")), str(word), 'spon', str(link)))
 		con.commit()
-	con.close()

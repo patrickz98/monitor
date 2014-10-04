@@ -26,7 +26,6 @@ def stern():
 		title = x[1]
 		if len(title) > 18 and len(title) < 110:
 			if last != title:
-
 				if "\"" in title: title = re.sub(r"\"", "", title)
 				if "'" in title: title = re.sub(r"'", "", title)
 				if "„" in title: title = re.sub(r"„", "", title)
@@ -42,8 +41,9 @@ def stern():
 				if "ö" in title: title = re.sub(r"ö", "oe", title)
 		
 				title = regexhtml.main(title)
+				link = 'http://www.stern.de' + x[0]
 
-				cache.update({unicodedata.normalize('NFKD', title.decode("utf8")).encode('ascii','ignore') : x[0]})
+				cache.update({unicodedata.normalize('NFKD', title.decode("utf8")).encode('ascii','ignore') : link})
  				last = title
  	find = cache
 	
@@ -58,4 +58,3 @@ def stern():
 	    		(str(time.strftime("%Y%m%d")), str(word), 'stern', str(find[word])))
 
 		con.commit()
-	con.close()

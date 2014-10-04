@@ -60,4 +60,3 @@ def tagesspiegel():
 	    		(str(time.strftime("%Y%m%d")), str(word), 'tagesspiegel', str(find[word])))
 
 		con.commit()
-	con.close()

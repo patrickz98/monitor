@@ -54,4 +54,3 @@ def welt():
 	    		(str(time.strftime("%Y%m%d")), str(word), 'welt', str(find[word])))
 
 		con.commit()
-	con.close()
