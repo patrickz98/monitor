@@ -6,3 +6,6 @@ mysql:
 
 clean:
 	find . -name '*.pyc' -delete
+
+backup:
+	sh monitor-mysql-backup.sh

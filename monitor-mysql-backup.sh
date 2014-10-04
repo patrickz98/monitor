@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NOW=$(date +"%Y-%m-%d")
+NOW=$(date + "%Y%m%d")
 
 DB_USER="monitor"
 DB_PASS="test123"
