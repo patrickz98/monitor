@@ -1,9 +1,6 @@
-Todo
+Todo:
 
 * search interface
-	--> wordpress site (http://www.chartjs.org/docs/)
-
-* mysql database
 
 * windows compatibly
 

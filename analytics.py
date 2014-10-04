@@ -13,7 +13,7 @@ header.main()
 
 con = conf.con
 bad = conf.bad
-
+exception = conf.exception
 list = {}
 
 def mysql():
@@ -65,7 +65,7 @@ def main():
 	for b in data:
 		for c in b.split():
 			if ":" in c: c = c[:-1]
-			if str(c) not in bad and c != "" and len(str(c)) > 3 or str(c) in blacklist.exception:
+			if str(c) not in bad and c != "" and len(str(c)) > 3 or str(c) in exception:
 				if find(c) > 6:
 					list.update({c:find(c)})
 
