@@ -44,7 +44,7 @@ bad = ["um", "an", "von", "in", "den", "haelt", "sicher", "tritt", "essen",
        "erhoeht", "warnt", "Nord", "ruck", "Profi", "ersten", "Fussball:",
        "liess", "ausser", "erneut", "feiert", "spielt", "Moto", "euer",
        "Star", "Neues", "bleibt", "bitten", "fordert", "West", "dass",
-       "weitere", "siegt", "achte", "Gross", "Sued",
+       "weitere", "siegt", "achte", "Gross", "Sued", "verlaesst",
        "Deutsche", "Bund"]
 
 exception = ["EU", "Eu", "USA", "US", "BND", "IS", "Tod", "CIA", "NSA", "ARD", "ZDF",

@@ -72,7 +72,7 @@ def graph(word, html):
 		html.write( '		<script>\n' )	
 		html.write( '			var randomScalingFactor = function(){ return Math.round(Math.random()*100)};\n')
 		html.write( '			var lineChartData%s = {\n' % word )
-		html.write( '				labels : %s,\n' % sort)
+		html.write( '				labels : %s,\n' % [x[-2:] + "." + x[4:-2] + "." + x[:4] for x in sort])
 		html.write( '				datasets : [\n' )
 		html.write( '					{\n' )
 		html.write( '						label: "%s",\n' % word )
@@ -139,7 +139,7 @@ def main(search):
 	
 	for x in cache:
 		if x[2] == time.strftime("%Y%m%d"):
-			title = x[0] + " (" + x[1] + ")" + " (" + x[2] + ")"
+			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
 #			print title
 			html.write('		<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
 #			html.write('		<p><a href="%s">%s</a></p>\n' % (cache[x], title))
@@ -151,7 +151,7 @@ def main(search):
 	
 	for x in cache:
 		if x[2] != time.strftime("%Y%m%d"):
-			title = x[0] + " (" + x[1] + ")" + " (" + x[2] + ")"
+			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
 #			print title
 			html.write('		<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
 #			html.write('		<p><a href="%s">%s</a></p>\n' % (cache[x], title))
