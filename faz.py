@@ -59,3 +59,4 @@ def faz():
 	    			(str(time.strftime("%Y%m%d")), str(word), 'faz', str(link)))
 
 		con.commit()
+	con.close()

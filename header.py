@@ -22,3 +22,5 @@ def main():
 	stern.stern()
 	spon.spon()
 	faz.faz()
+
+	con.close()

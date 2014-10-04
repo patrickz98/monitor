@@ -58,3 +58,4 @@ def stern():
 	    		(str(time.strftime("%Y%m%d")), str(word), 'stern', str(find[word])))
 
 		con.commit()
+	con.close()

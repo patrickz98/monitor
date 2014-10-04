@@ -58,6 +58,7 @@ def mydata():
 				(str(time.strftime("%Y%m%d")), str(Cluster), str(list[Cluster])))
 		
 		con.commit()
+	con.close()
 
 def main():
 	global list

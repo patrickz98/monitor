@@ -54,3 +54,4 @@ def zeit():
 	    		(str(time.strftime("%Y%m%d")), str(word), 'zeit', str(find[word])))
 
 		con.commit()
+	con.close()
