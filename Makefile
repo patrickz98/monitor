@@ -1,6 +1,6 @@
 all:
-	python analytics.py
-	
+	python analytics-html.py
+
 mysql:
 	python -c 'import header; header.main();'
 
@@ -15,8 +15,6 @@ lib:
 	curl "https://raw.githubusercontent.com/nnnick/Chart.js/master/Chart.js" 1> Chart.js 2>/dev/null
 
 web: lib mysql all
-	python analytics-html.py
-
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
 
