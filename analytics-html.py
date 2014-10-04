@@ -89,7 +89,7 @@ def main():
 	html.write('\n')
 	html.write('		<h1>' 'Monitor: ' + time.strftime('%H:%M %d.%m.%Y') + '</h1>\n')
 	html.write('\n')
-	html.write('		<p style="font-size:50px;"></p>\n')
+	html.write('		<p style="font-size:65px;"></p>\n')
 	 
 	
 	for word in list:
@@ -97,7 +97,7 @@ def main():
 			
 			if "\"" in word: word = re.sub(r"\"", "", word)
 			
-			html.write(('		<p style="font-size:%dpx;"> ' % int(list[word] * 5)) + \
+			html.write(('		<p style="font-size:%dpx;"> ' % int(list[word] * 4)) + \
 						('<a href="./html/%s.html">' % str(word)) + str(word) + ': ' + str(list[word]) + \
 						'</a></p>\n')
 

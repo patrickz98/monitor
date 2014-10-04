@@ -6,7 +6,7 @@ mysql:
 
 clean:
 	find . -name '*.pyc' -delete
-	find . -name '*.html' -delete
+	find . -name '*html' -delete
 
 backup:
 	sh monitor-mysql-backup.sh
