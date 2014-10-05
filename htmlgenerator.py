@@ -126,10 +126,12 @@ def main(search):
 	html.write('</head>\n')
 	html.write('<body>\n')
 	html.write('<h1>' + search + '</h1>\n')
+	
 	try:
 		html.write("<p>" +  "Artikel Heute mit " + search + ": " + str(mysqldata(search)[time.strftime("%Y%m%d")]) + "</p>\n")
 	except:
-		pass
+		html.write("<p>" +  "Artikel Heute mit " + search + ":" + "</p>\n")
+	
 	html.write("<p></p>\n")
 		
 	graph(search, html)

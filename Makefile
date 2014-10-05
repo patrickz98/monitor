@@ -1,8 +1,11 @@
 all:
 	python analytics-html.py
 
-mysql:
+news:
 	python -c 'import header; header.main();'
+
+mysql:
+	python analytics-html.py > /dev/null
 
 clean:
 	find . -name '*.pyc' -delete
