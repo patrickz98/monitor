@@ -123,9 +123,9 @@ def main(search):
 	html.write('		</style>\n')
 	html.write('\n')
 
-	html.write('</head>\n')
-	html.write('<body>\n')
-	html.write('<h1>' + search + '</h1>\n')
+	html.write('	</head>\n')
+	html.write('	<body>\n')
+	html.write('		<h1>' + search + '</h1>\n')
 	
 	try:
 		html.write("<p>" +  "Artikel Heute mit " + search + ": " + str(mysqldata(search)[time.strftime("%Y%m%d")]) + "</p>\n")
@@ -136,8 +136,8 @@ def main(search):
 		
 	graph(search, html)
 		
-	html.write("<h2>" +  "Schlagzeilen Heute:" + "</h2>\n")
-	html.write("<p></p>\n")
+	html.write("		<h2>" +  "Schlagzeilen Heute:" + "</h2>\n")
+	html.write("		<p></p>\n")
 	
 	for x in cache:
 		if x[2] == time.strftime("%Y%m%d"):
@@ -147,9 +147,9 @@ def main(search):
 #			html.write('		<p><a href="%s">%s</a></p>\n' % (cache[x], title))
 
 	
-	html.write("<p></p>\n")
-	html.write("<h2>" +  "Archiv:" + "</h2>\n")
-	html.write("<p></p>\n")
+	html.write("		<p></p>\n")
+	html.write("		<h2>" +  "Archiv:" + "</h2>\n")
+	html.write("		<p></p>\n")
 	
 	for x in cache:
 		if x[2] != time.strftime("%Y%m%d"):
