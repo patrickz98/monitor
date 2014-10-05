@@ -3,7 +3,7 @@
 import time
 
 import conf
-import tagesspiegel, welt, zeit, sueddeutsche, stern, spon, faz, ntv
+import tagesspiegel, welt, zeit, sueddeutsche, stern, spon, faz, ntv, taz
 
 def main():
 	con = conf.con
@@ -23,3 +23,4 @@ def main():
 	spon.spon()
 	faz.faz()
 	ntv.ntv()
+	taz.taz()
