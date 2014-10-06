@@ -19,13 +19,13 @@
 
 $search = $_GET['search'];
 
+echo "\t\t<h1>" . $search . "</h1>\n";
+
 $link = mysql_connect('odroid-u3.local', 'monitor', 'test123');
 mysql_select_db('monitor');
 
 $query = 'SELECT * FROM news20141006';
 $result = mysql_query($query);
-
-echo "\t\t<h1>" . $search . "</h1>\n";
 
 while ($line = mysql_fetch_array($result)) 
 {
