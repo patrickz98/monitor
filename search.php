@@ -12,7 +12,7 @@ while ($line = mysql_fetch_array($result))
 {
 	if (strpos($line['Headlines'], $search) !== false) 
 	{
-		echo "<a href=" . $line['link'] . ">" . $line['Headlines'] . " " . $line['Newspaper'] . "</a>\n";    
+		echo "<p><a href=" . $line['link'] . ">" . $line['Headlines'] . " " . $line['Newspaper'] . "</a></p>\n";    
 	}
 }
 
