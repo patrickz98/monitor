@@ -38,3 +38,6 @@ web: lib all
 
 	sudo chown www-data:www-data /var/www/patrickz/html/*
 	sudo chown www-data:www-data /var/www/odroid/html/*
+
+nohup:
+	sudo nohup python web.py 1>/dev/null 2>/dev/null &
