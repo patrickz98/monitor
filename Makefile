@@ -17,6 +17,9 @@ backup:
 lib:
 	curl "https://raw.githubusercontent.com/nnnick/Chart.js/master/Chart.js" 1> Chart.js 2>/dev/null
 
+chown:
+	sudo find . -name '*html' -exec chown odroid:odroid {} \;
+
 web: lib all
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
