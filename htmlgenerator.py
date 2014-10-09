@@ -5,6 +5,7 @@ import time
 import re
 import MySQLdb as mdb
 from collections import OrderedDict
+import operator
 
 import conf
 
@@ -102,8 +103,16 @@ def main(search):
 		pass
 
 	html = open(htmldir + search + ".html", "w+")
+	
 	cache = mysqlnews(search)
-		
+# 	cache2 = sorted(cache, key=operator.itemgetter(2))
+# 	cache3 = {}
+# 	
+# 	for x in cache2:
+# 		cache3.update({ x : cache[x] })
+# 	
+# 	cache = cache3
+	
 	html.write('<!doctype html>\n')
 	html.write('<html>\n')
 	html.write('	<head>\n')
