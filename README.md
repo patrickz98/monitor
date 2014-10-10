@@ -1,3 +1,18 @@
+Install MySql:
+
+* sudo apt-get install mysql-server
+
+* sudo apt-get install python-mysqldb
+
+* sudo nano /etc/mysql/my.cnf
+-> bind-address= 0.0.0.0
+
+* CREATE DATABASE monitor;
+
+* CREATE USER 'monitor'@'%' IDENTIFIED BY 'test123';
+
+* grant all on monitor.* to monitor;
+
 Todo:
 
 * search interface
