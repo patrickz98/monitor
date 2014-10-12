@@ -27,6 +27,15 @@ web: lib all
 	sudo chown www-data:www-data /var/www/patrickz/Chart.js
 	sudo chown www-data:www-data /var/www/odroid/Chart.js
 
+	sudo cp news.png news.ico /var/www/patrickz/
+	sudo cp news.png news.ico /var/www/odroid/
+
+	sudo chown www-data:www-data /var/www/patrickz/news.png
+	sudo chown www-data:www-data /var/www/odroid/news.png
+	
+	sudo chown www-data:www-data /var/www/patrickz/news.ico
+	sudo chown www-data:www-data /var/www/odroid/news.ico
+
 	sudo cp aktuell.html /var/www/patrickz/
 	sudo cp aktuell.html /var/www/odroid/
 
