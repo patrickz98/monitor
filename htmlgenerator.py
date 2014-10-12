@@ -145,12 +145,12 @@ def main(search):
 		
 	graph(search, html)
 		
-	html.write("		<h2>" +  "Schlagzeilen Heute:" + "</h2>\n")
+	html.write("		<h2>" +  "Schlagzeilen Heute: " + "</h2>\n")
 	html.write("		<p></p>\n")
 	
 	for x in cache:
 		if x[2] == time.strftime("%Y%m%d"):
-			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
+			title = x[0] + " (" + x[1] + ")"
 #			print title
 			html.write('		<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
 #			html.write('		<p><a href="%s">%s</a></p>\n' % (cache[x], title))
