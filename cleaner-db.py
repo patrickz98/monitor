@@ -18,7 +18,7 @@ def main():
 		data = [x['Tables_in_monitor'] for x in rows]
 		
 		for x in data:
-			if int(time.strftime("%Y%m%d")) - 5 > int(x[4:]):
+			if int(time.strftime("%Y%m%d")) - 14 > int(x[4:]):
 				print "Delt -->", x
 				cur.execute("DROP TABLE %s" % x)
 

@@ -24,3 +24,14 @@ Quellen:
 * https://www.iconfinder.com/icons/115708/news_newspaper_subscribe_icon#size=128
 * http://mysql-python.sourceforge.net/
 * https://github.com/farcepest/MySQLdb1
+
+
+		<input type="image"
+			src="Ello.Faces.800.gif"
+			onClick="parent.location='statistik.html'"
+			value='Sort'
+			style="height:25px; width:75px">
+		<input type=button
+			onClick="parent.location='statistik.html'"
+			value='Unsort'
+			style="height:25px; width:75px">

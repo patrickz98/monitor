@@ -1,5 +1,7 @@
 all:
 	python analytics-html.py
+	python analytics-html-sort.py
+	python analytics-html-unsort.py
 
 news:
 	python -c 'import header; header.main();'

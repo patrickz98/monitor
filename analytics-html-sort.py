@@ -8,17 +8,17 @@ from collections import OrderedDict
 
 import conf 
 import blacklist
-import header
+#import header
 import htmlgenerator
 
-header.main()
+#header.main()
 
 con = conf.con
 bad = blacklist.bad
 
 list = {}
 
-html = open("aktuell.html", "w+")
+html = open("aktuell-sort.html", "w+")
 
 def mysql():
 	Headlines = {}
@@ -89,29 +89,31 @@ def main():
 	html.write('\n')
 	html.write('		<h1>' 'Monitor: ' + time.strftime('%H:%M %d.%m.%Y') + '</h1>\n')
 	html.write('\n')
-	
-	### Button to Sort site ###
+
+	### Button to Normal site ###
 	html.write('		<input type=button\n')
 	html.write('			onClick="parent.location=\'aktuell-sort.html\'"\n')
-	html.write('			value="Sort"\n')
+	html.write('			value="Normal"\n')
 	html.write('			style="height:25px; width:80px">\n')
 
-	### Button to Sort site ###
+	### Button to Unsort site ###
 	html.write('		<input type=button\n')
 	html.write('			onClick="parent.location=\'aktuell-unsort.html\'"\n')
 	html.write('			value="Unsort"\n')
 	html.write('			style="height:25px; width:80px">\n')
 
 	html.write('		<p style="font-size:65px;"></p>\n')
-
-	for word in list:
+	 
+	list = OrderedDict(sorted(list.items(), key=lambda x:x[1]))
+	
+	for word in reversed(list):
 		if list[word] >= 8 and word not in bad:
 			
 			if "\"" in word: word = re.sub(r"\"", "", word)
 			
-			html.write(('\t\t<p style="font-size:%dpx;">' % int(list[word] * 4)) + \
-						('<a href="./html/%s.html">' % str(word)) + str(word) + ': ' + str(list[word]) + \
-						'</a></p>\n')
+			html.write(('\t\t<p style="font-size:%dpx;display:inline"> ' % int(list[word] * 2)) + \
+						('<a href="./html/%s.html">' % str(word)) + str(word) + ' ' + str(list[word]) + \
+						';  ' + '</a></p>\n')
 
 			### Html Generierung ####
 			htmlgenerator.main(word)
@@ -119,7 +121,7 @@ def main():
 	html.write('	</body>\n')
 	html.write('</html>\n')
 	html.close()
-	list = OrderedDict(sorted(list.items(), key=lambda x:x[1]))
+#	list = OrderedDict(sorted(list.items(), key=lambda x:x[1]))
 	
 # 	print time.strftime("%H:%M %d.%m.%Y")
 # 	print 
