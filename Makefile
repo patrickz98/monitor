@@ -44,6 +44,12 @@ web: lib all
 	sudo chown www-data:www-data /var/www/patrickz/aktuell.html
 	sudo chown www-data:www-data /var/www/odroid/aktuell.html
 
+	sudo cp aktuell-*.html /var/www/patrickz/
+	sudo cp aktuell-*.html /var/www/odroid/
+
+	sudo chown www-data:www-data /var/www/patrickz/aktuell-*.html
+	sudo chown www-data:www-data /var/www/odroid/aktuell-*.html
+
 	sudo cp -r html /var/www/patrickz/
 	sudo cp -r html /var/www/odroid/
 	
