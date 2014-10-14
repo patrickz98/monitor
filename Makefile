@@ -1,7 +1,5 @@
 all:
 	python analytics-html.py
-	python analytics-html-sort.py
-	python analytics-html-unsort.py
 
 news:
 	python -c 'import header; header.main();'
@@ -29,6 +27,10 @@ lib:
 chown:
 	sudo find . -user root -exec chown odroid:odroid {} \;
 
+html-divergent:
+	python analytics-html-sort.py
+	python analytics-html-unsort.py
+
 web: chown lib all
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
@@ -50,12 +52,6 @@ web: chown lib all
 
 	sudo chown www-data:www-data /var/www/patrickz/aktuell.html
 	sudo chown www-data:www-data /var/www/odroid/aktuell.html
-
-	sudo cp aktuell-*.html /var/www/patrickz/
-	sudo cp aktuell-*.html /var/www/odroid/
-
-	sudo chown www-data:www-data /var/www/patrickz/aktuell-*.html
-	sudo chown www-data:www-data /var/www/odroid/aktuell-*.html
 
 	sudo cp -r html /var/www/patrickz/
 	sudo cp -r html /var/www/odroid/

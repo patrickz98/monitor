@@ -91,16 +91,16 @@ def main():
 	html.write('\n')
 	
 	### Button to Sort site ###
-	html.write('		<input type=button\n')
-	html.write('			onClick="parent.location=\'aktuell-sort.html\'"\n')
-	html.write('			value="Sort"\n')
-	html.write('			style="height:25px; width:80px">\n')
-
-	### Button to Sort site ###
-	html.write('		<input type=button\n')
-	html.write('			onClick="parent.location=\'aktuell-unsort.html\'"\n')
-	html.write('			value="Unsort"\n')
-	html.write('			style="height:25px; width:80px">\n')
+# 	html.write('		<input type=button\n')
+# 	html.write('			onClick="parent.location=\'aktuell-sort.html\'"\n')
+# 	html.write('			value="Sort"\n')
+# 	html.write('			style="height:25px; width:80px">\n')
+# 
+ 	### Button to Sort site ###
+# 	html.write('		<input type=button\n')
+# 	html.write('			onClick="parent.location=\'aktuell-unsort.html\'"\n')
+# 	html.write('			value="Unsort"\n')
+# 	html.write('			style="height:25px; width:80px">\n')
 
 	html.write('		<p style="font-size:65px;"></p>\n')
 
