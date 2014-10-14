@@ -15,28 +15,29 @@
 	</head>
 	<body>
 
-<?php
+	<?php
 
-$search = $_GET['search'];
+		$search = $_GET['search'];
 
-echo "\t\t<h1>" . $search . "</h1>\n";
+		echo "\t\t<h1>" . $search . "</h1>\n";
 
-$link = mysql_connect('odroid-u3.local', 'monitor', 'test123');
-mysql_select_db('monitor');
+		$link = mysql_connect('odroid-u3.local', 'monitor', 'test123');
+		mysql_select_db('monitor');
 
-$query = 'SELECT * FROM news20141006';
-$result = mysql_query($query);
+		$query = 'SELECT * FROM' + ' news' + date("Ymd");
+		$result = mysql_query($query);
 
-while ($line = mysql_fetch_array($result)) 
-{
-	if (strpos($line['Headlines'], $search) !== false) 
-	{
-		echo "\t\t<p><a href=" . $line['link'] . ">" . $line['Headlines'] . " " . $line['Newspaper'] . "</a></p>\n";    
-	}
-}
+		while ($line = mysql_fetch_array($result)) 
+		{
+			if (strpos($line['Headlines'], $search) !== false) 
+			{
+				echo "\t\t<p><a href=" . $line['link'] . ">" . $line['Headlines'] . " " . $line['Newspaper'] . "</a></p>\n";    
+			}
+		}
 
-mysql_free_result($result);
-mysql_close($link);
-?>
+		mysql_free_result($result);
+		mysql_close($link);
+	?>
+
 	</body>
 </html>
