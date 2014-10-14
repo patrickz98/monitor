@@ -92,7 +92,7 @@ def main():
 
 	### Button to Normal site ###
 	html.write('		<input type=button\n')
-	html.write('			onClick="parent.location=\'aktuell-sort.html\'"\n')
+	html.write('			onClick="parent.location=\'aktuell.html\'"\n')
 	html.write('			value="Normal"\n')
 	html.write('			style="height:25px; width:80px">\n')
 
