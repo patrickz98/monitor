@@ -66,6 +66,8 @@ def main():
 	global list
 	global data
         
+	print "create --> aktuell.html"
+    
 	for b in data:
 		for c in b.split():
 			if ":" in c: c = c[:-1]
@@ -85,9 +87,14 @@ def main():
 	html.write('			a:visited { text-decoration:none; font-weight:bold; color:#0063b0; }\n')
 	html.write('		</style>\n')
 	html.write('	</head>\n')
+
 	html.write('	<body>\n')
+
 	html.write('\n')
 	html.write('		<h1>' 'Monitor: ' + time.strftime('%H:%M %d.%m.%Y') + '</h1>\n')
+	html.write('		<p>Eine Seite zur Weststellung von Medialer Aufmerksamkeit, im Bezug auf Schlagwoerter</p>\n')
+	html.write('		<p>Mit Daten von: SPIEGEL ONLINE, taz.de, Faz, Sueddeuchen, Stern, Zeit, n-tv, Die Welt</p>\n')
+
 	html.write('\n')
 	
 	### Button to Sort site ###
@@ -109,7 +116,7 @@ def main():
 			
 			if "\"" in word: word = re.sub(r"\"", "", word)
 			
-			html.write(('\t\t<p style="font-size:%dpx;">' % int(list[word] * 4)) + \
+			html.write(('\t\t<p style="font-size:%dpx;">' % int(list[word] * 4.5)) + \
 						('<a href="./html/%s.html">' % str(word)) + str(word) + ': ' + str(list[word]) + \
 						'</a></p>\n')
 
@@ -120,13 +127,6 @@ def main():
 	html.write('</html>\n')
 	html.close()
 	list = OrderedDict(sorted(list.items(), key=lambda x:x[1]))
-	
-# 	print time.strftime("%H:%M %d.%m.%Y")
-# 	print 
-# 	
-#  	for l in reversed(list):
-#  		if list[l] > 6 and l not in bad:
-#  			print l + ": " + str(list[l])
 
 main()
 mydata()

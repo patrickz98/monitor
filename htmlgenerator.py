@@ -54,8 +54,6 @@ def mysqldata(search):
 
 	return find
 
-#print mysqldata('Hongkong')
-
 def graph(word, html):
 	
 	size = mysqldata(word)
@@ -102,16 +100,12 @@ def main(search):
 	except OSError:
 		pass
 
+	print "create --> " + htmldir + search + ".html"
+
 	html = open(htmldir + search + ".html", "w+")
-	
+
 	cache = mysqlnews(search)
-# 	cache2 = sorted(cache, key=operator.itemgetter(2))
-# 	cache3 = {}
-# 	
-# 	for x in cache2:
-# 		cache3.update({ x : cache[x] })
-# 	
-# 	cache = cache3
+	cache2 = sorted(mysqlnews(search), key=operator.itemgetter(2))
 	
 	html.write('<!doctype html>\n')
 	html.write('<html>\n')
@@ -137,35 +131,28 @@ def main(search):
 	html.write('		<h1>' + search + '</h1>\n')
 	
 	try:
-		html.write("<p>" +  "Artikel Heute mit " + search + ": " + str(mysqldata(search)[time.strftime("%Y%m%d")]) + "</p>\n")
+		html.write("\t\t<p>" +  "Artikel Heute mit " + search + ": " + str(mysqldata(search)[time.strftime("%Y%m%d")]) + "</p>\n")
 	except:
-		html.write("<p>" +  "Artikel Heute mit " + search + ":" + "</p>\n")
-	
-	html.write("<p></p>\n")
+		html.write("\t\t<p>" +  "Artikel Heute mit " + search + ":" + "</p>\n")
 		
 	graph(search, html)
 		
-	html.write("		<h2>" +  "Schlagzeilen Heute: " + "</h2>\n")
-	html.write("		<p></p>\n")
+	html.write("\t\t<h2>" +  "Schlagzeilen Heute: " + "</h2>\n")
 	
-	for x in cache:
+	for x in cache2:
 		if x[2] == time.strftime("%Y%m%d"):
 			title = x[0] + " (" + x[1] + ")"
-#			print title
 			html.write('		<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
-#			html.write('		<p><a href="%s">%s</a></p>\n' % (cache[x], title))
 
 	
 	html.write("		<p></p>\n")
 	html.write("		<h2>" +  "Archiv:" + "</h2>\n")
 	html.write("		<p></p>\n")
 	
-	for x in cache:
+	for x in cache2:
 		if x[2] != time.strftime("%Y%m%d"):
 			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
-#			print title
-			html.write('		<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
-#			html.write('		<p><a href="%s">%s</a></p>\n' % (cache[x], title))
+			html.write('\t\t<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
 		
 	html.write("</body>\n")
 	html.write("</html>\n")
