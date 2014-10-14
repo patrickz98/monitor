@@ -61,7 +61,7 @@ def graph(word, html):
 	size = mysqldata(word)
 	sort = sorted(size)
 		
-	if len(size) >= 3:
+	if len(size) >= 4:
 	
 		html.write('		<div style="width:60%">\n')
 		html.write('			<div>\n')

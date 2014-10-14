@@ -52,6 +52,6 @@ def ntv():
     	    	if not "=" in word and not "\"" in word:
     	    			
 	    		cur.execute("INSERT INTO news%s(Headlines, Newspaper, link) VALUES('%s', '%s', '%s')" % \
-	    			(str(time.strftime("%Y%m%d")), str(word), 'ntv', str(find[word])))
+	    			(str(time.strftime("%Y%m%d")), str(word), 'n-tv', str(find[word])))
 
 		con.commit()

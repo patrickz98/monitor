@@ -56,6 +56,6 @@ def faz():
 				link = "http://www.faz.net/" +  find[word]
  						
 	    		cur.execute("INSERT INTO news%s(Headlines, Newspaper, link) VALUES('%s', '%s', '%s')" % \
-	    			(str(time.strftime("%Y%m%d")), str(word), 'faz', str(link)))
+	    			(str(time.strftime("%Y%m%d")), str(word), 'Faz', str(link)))
 
 		con.commit()

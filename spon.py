@@ -52,5 +52,5 @@ def spon():
     	    	if not "Newsletter" in word and not "Anzeige" in word and not "class" in word:
     	    		link = "http://www.spiegel.de" + find[word]
 			cur.execute("INSERT INTO news%s(Headlines, Newspaper, link) VALUES('%s', '%s', '%s')" % \
-				(str(time.strftime("%Y%m%d")), str(word), 'spon', str(link)))
+				(str(time.strftime("%Y%m%d")), str(word), 'Spiegel Online', str(link)))
 		con.commit()

@@ -73,6 +73,6 @@ def sueddeutsche():
 #			if  not in bla and len(word) > 10 and "SZ" not in word and "Bundesliga" not in word and "Kalender" not in word and "ueddeutsche" not in word:
 			
 			cur.execute("INSERT INTO news%s(Headlines, Newspaper, link) VALUES('%s', '%s', '%s')" % \
-   				(str(time.strftime("%Y%m%d")), str(word), 'sueddeutsche', str(find2[word])))
+   				(str(time.strftime("%Y%m%d")), str(word), 'Sueddeutsche', str(find2[word])))
 	
 		con.commit()

@@ -55,6 +55,6 @@ def stern():
     	    for word in find:
     	    			
 	    	cur.execute("INSERT INTO news%s(Headlines, Newspaper, link) VALUES('%s', '%s', '%s')" % \
-	    		(str(time.strftime("%Y%m%d")), str(word), 'stern', str(find[word])))
+	    		(str(time.strftime("%Y%m%d")), str(word), 'Stern', str(find[word])))
 
 		con.commit()
