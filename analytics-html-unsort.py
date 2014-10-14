@@ -99,7 +99,7 @@ def main():
 	### Button to Sort site ###
 	html.write('		<input type=button\n')
 	html.write('			onClick="parent.location=\'aktuell-sort.html\'"\n')
-	html.write('			value="Unsort"\n')
+	html.write('			value="Sort"\n')
 	html.write('			style="height:25px; width:80px">\n')
 
 	

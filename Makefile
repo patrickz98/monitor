@@ -22,7 +22,7 @@ lib:
 chown:
 	sudo find . -user root -exec chown odroid:odroid {} \;
 
-web: lib all
+web: chown lib all
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
 
