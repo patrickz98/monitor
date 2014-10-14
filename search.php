@@ -24,7 +24,7 @@
 		$link = mysql_connect('odroid-u3.local', 'monitor', 'test123');
 		mysql_select_db('monitor');
 
-		$query = 'SELECT * FROM' + ' news' + date("Ymd");
+		$query = "SELECT * FROM" . " news" . date("Ymd");
 		$result = mysql_query($query);
 
 		while ($line = mysql_fetch_array($result)) 

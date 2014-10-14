@@ -13,6 +13,13 @@ clean:
 	find . -name '*.pyc' -delete
 	find . -name '*html' -delete
 
+search:
+	sudo cp search.php /var/www/odroid/
+	sudo cp search.php /var/www/patrickz/
+	
+	sudo chown www-data:www-data /var/www/patrickz/search.php
+	sudo chown www-data:www-data /var/www/odroid/search.php
+	
 backup:
 	sh monitor-mysql-backup.sh
 
