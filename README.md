@@ -17,8 +17,6 @@ Todo:
 
 * search interface
 
-* windows compatibly
-
 Quellen:
 * http://www.chartjs.org/docs/
 * https://www.iconfinder.com/icons/115708/news_newspaper_subscribe_icon#size=128
@@ -26,12 +24,12 @@ Quellen:
 * https://github.com/farcepest/MySQLdb1
 
 
-		<input type="image"
-			src="Ello.Faces.800.gif"
-			onClick="parent.location='statistik.html'"
-			value='Sort'
-			style="height:25px; width:75px">
-		<input type=button
-			onClick="parent.location='statistik.html'"
-			value='Unsort'
-			style="height:25px; width:75px">
+Notes:
+
+Python webserver
+* sudo apt-get install libapache2-mod-python
+
+Conf
+* AddHandler mod_python .psp
+  PythonHandler mod_python.psp
+  PythonDebug On
