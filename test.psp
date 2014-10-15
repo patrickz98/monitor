@@ -1,0 +1,12 @@
+<html>
+	<body>
+		<h1><% req.write("Search") %></h1>
+		<% var2 = "baldfa" %>
+		<p>
+<% 
+req.write("0") 
+req.write("1") 
+%>
+		</p>
+	</body>
+</html>
