@@ -42,28 +42,49 @@
 	{
 		if (strpos($row[0], "news") !== false) 
 		{
-				echo "<h2>Date: " 
-				. substr($row[0], -2) . "." 
-				. substr($row[0], 8, -2) . "." 
-				. substr($row[0], 4, -4) 
-				. "</h2>\n";		
-				
-				$query2 = "SELECT * FROM" . " $dbname.{$row[0]}";
-				$result2 = mysql_query($query2);
-
-				while ($line = mysql_fetch_array($result2)) 
+				if (substr($row[0], 4) == date("Ymd"))
 				{
-					if (strpos($line['Headlines'], $search) !== false) 
+					echo "<h2>Heute:</h2>\n"
+					$query2 = "SELECT * FROM" . " $dbname.{$row[0]}";
+					$result2 = mysql_query($query2);
+
+					while ($line = mysql_fetch_array($result2)) 
 					{
-						echo "\t\t<p style=\"font-size:18px;\"><a href=" 
-						. $line['link'] . ">" . $line['Headlines'] . " " 
-						. $line['Newspaper'] 
-						. "</a></p>\n";  
+						if (strpos($line['Headlines'], $search) !== false) 
+						{
+							echo "\t\t<p style=\"font-size:18px;\"><a href=" 
+							. $line['link'] . ">" . $line['Headlines'] . " " 
+							. $line['Newspaper'] 
+							. "</a></p>\n";  
+						}
 					}
+
+					mysql_free_result($result2);
 				}
+				else
+				{
+					echo "<h3>" 
+					. substr($row[0], -2) . "." 
+					. substr($row[0], 8, -2) . "." 
+					. substr($row[0], 4, -4) 
+					. "</h3>\n";		
+				
+					$query2 = "SELECT * FROM" . " $dbname.{$row[0]}";
+					$result2 = mysql_query($query2);
 
-				mysql_free_result($result2);
+					while ($line = mysql_fetch_array($result2)) 
+					{
+						if (strpos($line['Headlines'], $search) !== false) 
+						{
+							echo "\t\t<p style=\"font-size:18px;\"><a href=" 
+							. $line['link'] . ">" . $line['Headlines'] . " " 
+							. $line['Newspaper'] 
+							. "</a></p>\n";  
+						}
+					}
 
+					mysql_free_result($result2);
+				}
 			}
 		}
 
