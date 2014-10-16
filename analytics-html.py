@@ -89,26 +89,20 @@ def main():
 	html.write('	</head>\n')
 
 	html.write('	<body>\n')
-
 	html.write('\n')
+
 	html.write('		<h1>' 'Monitor: ' + time.strftime('%H:%M %d.%m.%Y') + '</h1>\n')
 	html.write('		<p>Eine Seite zur Weststellung von Medialer Aufmerksamkeit, im Bezug auf Schlagwoerter</p>\n')
 	html.write('		<p>Mit Daten von: Spiegel Online, taz.de, Faz, Sueddeuchen, Stern, Zeit, n-tv, Die Welt</p>\n')
+	html.write('\n')
 
+	### Search ###
+	html.write('		<form name="input" action="search.php" method="get">')
+	html.write('			Suche: <input type="text" name="search">')
+	html.write('			<input type="submit" value="Submit">')
+	html.write('		</form>')
 	html.write('\n')
 	
-	### Button to Sort site ###
-# 	html.write('		<input type=button\n')
-# 	html.write('			onClick="parent.location=\'aktuell-sort.html\'"\n')
-# 	html.write('			value="Sort"\n')
-# 	html.write('			style="height:25px; width:80px">\n')
-# 
- 	### Button to Sort site ###
-# 	html.write('		<input type=button\n')
-# 	html.write('			onClick="parent.location=\'aktuell-unsort.html\'"\n')
-# 	html.write('			value="Unsort"\n')
-# 	html.write('			style="height:25px; width:80px">\n')
-
 	html.write('		<p style="font-size:65px;"></p>\n')
 
 	for word in list:

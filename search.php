@@ -31,7 +31,7 @@
 		{
 			if (strpos($line['Headlines'], $search) !== false) 
 			{
-				echo "\t\t<p><a href=" . $line['link'] . ">" . $line['Headlines'] . " " . $line['Newspaper'] . "</a></p>\n";    
+				echo '\t\t<p style="font-size:18px;"><a href=' . $line['link'] . '>' . $line['Headlines'] . ' ' . $line['Newspaper'] . '</a></p>\n';    
 			}
 		}
 
