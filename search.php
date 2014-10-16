@@ -17,7 +17,7 @@
 
 	<?php
 
-	$search = "Hongkong";
+	$search = $_GET["search"];
 	$dbname = 'monitor';
 
 	echo "\t\t<h1>" . $search . "</h1>\n";
@@ -54,7 +54,7 @@
 						{
 							echo "\t\t<p style=\"font-size:18px;\"><a href=" 
 							. $line['link'] . ">" . $line['Headlines'] . " " 
-							. $line['Newspaper'] 
+							. "(" . $line['Newspaper'] . ")"
 							. "</a></p>\n";  
 						}
 					}
@@ -88,7 +88,7 @@
 						{
 							echo "\t\t<p style=\"font-size:18px;\"><a href=" 
 							. $line['link'] . ">" . $line['Headlines'] . " " 
-							. $line['Newspaper'] 
+							. "(" . $line['Newspaper'] . ")"
 							. "</a></p>\n";  
 						}
 					}
