@@ -42,7 +42,12 @@
 	{
 		if (strpos($row[0], "news") !== false) 
 		{
-				echo "Date: " . substr($row[0], 4) . "\n";		
+				echo "<h2>Date: " 
+				. substr($row[0], -2) . "." 
+				. substr($row[0], 8, -2) . "." 
+				. substr($row[0], 4, -4) 
+				. "</h2>\n";		
+				
 				$query2 = "SELECT * FROM" . " $dbname.{$row[0]}";
 				$result2 = mysql_query($query2);
 
