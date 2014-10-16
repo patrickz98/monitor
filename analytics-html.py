@@ -99,7 +99,7 @@ def main():
 	### Search ###
 	html.write('		<form name="input" action="search.php" method="get">')
 	html.write('			Suche: <input type="text" name="search">')
-	html.write('			<input type="submit" value="Submit">')
+	html.write('			<input type="submit" value="Suchen">')
 	html.write('		</form>')
 	html.write('\n')
 	
