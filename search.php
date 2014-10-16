@@ -23,18 +23,26 @@
 
 		$link = mysql_connect('odroid-u3.local', 'monitor', 'test123');
 		mysql_select_db('monitor');
-
-		$query = "SELECT * FROM" . " news" . date("Ymd");
-		$result = mysql_query($query);
-
-		while ($line = mysql_fetch_array($result)) 
+		
+		while ($data = mysql_fetch_row(mysql_query("SHOW TABLES FROM monitor")))
 		{
-			if (strpos($line['Headlines'], $search) !== false) 
+			if (strpos($data, "news") !== false)
 			{
-				echo "\t\t<p style=\"font-size:18px;\"><a href=" . $line['link'] . ">" . $line['Headlines'] . " " . $line['Newspaper'] . "</a></p>\n";    
+				$query = "SELECT * FROM" . " news" . $date;
+				$result = mysql_query($query);
+
+				while ($line = mysql_fetch_array($result)) 
+				{
+					if (strpos($line['Headlines'], $search) !== false) 
+					{
+						echo "\t\t<p style=\"font-size:18px;\"><a href=" 
+						. $line['link'] . ">" . $line['Headlines'] . " " 
+						. $line['Newspaper'] 
+						. "</a></p>\n";    
+					}
+				}
 			}
 		}
-
 		mysql_free_result($result);
 		mysql_close($link);
 	?>
