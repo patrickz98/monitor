@@ -33,3 +33,6 @@ Conf
 * AddHandler mod_python .psp
   PythonHandler mod_python.psp
   PythonDebug On
+
+Stuff
+* display:inline

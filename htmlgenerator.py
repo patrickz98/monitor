@@ -69,7 +69,6 @@ def graph(word, html):
 		html.write('\n')
 		
 		html.write( '		<script>\n' )	
-		html.write( '			var randomScalingFactor = function(){ return Math.round(Math.random()*100)};\n')
 		html.write( '			var lineChartData%s = {\n' % word )
 		html.write( '				labels : %s,\n' % [x[-2:] + "." + x[4:-2] + "." + x[:4] for x in sort])
 		html.write( '				datasets : [\n' )
@@ -89,7 +88,7 @@ def graph(word, html):
 		html.write( '			window.onload = function(){\n')
 		html.write( '				var ctx%s = document.getElementById("%s").getContext("2d");\n' % (word, word) )
 		html.write( '				window.myLine%s = new Chart(ctx%s).Line(lineChartData%s, {\n' % (word, word, word) )
-		html.write( '				responsive: true, animation: false });\n' )
+		html.write( '				responsive: true, animation: true });\n' )
 		html.write( '			}\n' )
 		html.write( '		</script>\n' )
 
