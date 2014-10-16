@@ -67,19 +67,28 @@
 	$sql = "SHOW TABLES FROM $dbname";
 	$result = mysql_query($sql);
 
-	while ($row = mysql_fetch_row($result)) 
+	$all_rows = array();
+	while($row=mysql_fetch_array($result)) 
 	{
-		if (strpos($row[0], "news") !== false) 
+		echo $row[0] . "\n";
+		$all_rows[] = $row[0];
+	}
+
+	$all_rows = array_reverse($all_rows);
+
+	foreach ($all_rows as $news) 
+	{
+		if (strpos($news, "news") !== false) 
 		{
-				if (substr($row[0], 4) !== date("Ymd"))
+				if (substr($news, 4) !== date("Ymd"))
 				{
 					echo "<h3>" 
-					. substr($row[0], -2) . "." 
-					. substr($row[0], 8, -2) . "." 
-					. substr($row[0], 4, -4) 
+					. substr($news, -2) . "." 
+					. substr($news, 8, -2) . "." 
+					. substr($news, 4, -4) 
 					. "</h3>\n";		
 				
-					$query2 = "SELECT * FROM" . " $dbname.{$row[0]}";
+					$query2 = "SELECT * FROM" . " $dbname.{$news}";
 					$result2 = mysql_query($query2);
 
 					while ($line = mysql_fetch_array($result2)) 
@@ -98,7 +107,7 @@
 			}
 		}
 
-		mysql_free_result($result);
+		mysql_free_result($result);	
 	?>
 	</body>
 </html>
