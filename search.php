@@ -70,7 +70,6 @@
 	$all_rows = array();
 	while($row=mysql_fetch_array($result)) 
 	{
-		echo $row[0] . "\n";
 		$all_rows[] = $row[0];
 	}
 
