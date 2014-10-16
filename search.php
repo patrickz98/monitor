@@ -17,7 +17,7 @@
 
 	<?php
 
-	$search = $_GET['search'];
+	$search = "Hongkong";
 	$dbname = 'monitor';
 
 	echo "\t\t<h1>" . $search . "</h1>\n";
@@ -59,9 +59,19 @@
 						}
 					}
 
-					mysql_free_result($result2);
+ 					mysql_free_result($result2);
 				}
-				else
+		}
+	}
+
+	$sql = "SHOW TABLES FROM $dbname";
+	$result = mysql_query($sql);
+
+	while ($row = mysql_fetch_row($result)) 
+	{
+		if (strpos($row[0], "news") !== false) 
+		{
+				if (substr($row[0], 4) !== date("Ymd"))
 				{
 					echo "<h3>" 
 					. substr($row[0], -2) . "." 
@@ -90,6 +100,5 @@
 
 		mysql_free_result($result);
 	?>
-
 	</body>
 </html>
