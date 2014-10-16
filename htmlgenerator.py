@@ -146,7 +146,7 @@ def main(search):
 	html.write("		<h2>" +  "Archiv:" + "</h2>\n")
 	html.write("		<p></p>\n")
 	
-	for x in cache2:
+	for x in reversed(cache2):
 		if x[2] != time.strftime("%Y%m%d"):
 			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
 			html.write('\t\t<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
