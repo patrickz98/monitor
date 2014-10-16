@@ -44,7 +44,7 @@
 		{
 				if (substr($row[0], 4) == date("Ymd"))
 				{
-					echo "<h2>Heute:</h2>\n"
+					echo "<h2>Heute:</h2>\n";
 					$query2 = "SELECT * FROM" . " $dbname.{$row[0]}";
 					$result2 = mysql_query($query2);
 
