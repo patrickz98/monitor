@@ -3,7 +3,7 @@
 import time
 
 import conf
-import tagesspiegel, welt, zeit, sueddeutsche, stern, spon, faz, ntv, taz
+from lib import tagesspiegel, welt, zeit, sueddeutsche, stern, spon, faz, ntv, taz
 
 def main():
 	con = conf.con
