@@ -79,7 +79,7 @@ def main():
 	html.write('		<script src="./Chart.js"></script>\n')
 	html.write('		<style type="text/css">\n' )
 	html.write('			a:link { text-decoration:none; color:#000000; }\n')
-	html.write('			a:visited { text-decoration:none; color:#0063b0; }\n')
+	html.write('			a:visited { text-decoration:none; color:#e76e00; }\n')
 	html.write('\n')
 
 	html.write('		</style>\n')

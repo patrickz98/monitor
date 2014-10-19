@@ -84,7 +84,7 @@ def main():
 	html.write('\n')
 	html.write('		<style type="text/css">\n' )
 	html.write('			a:link { text-decoration:none; font-weight:bold; color:#000000; }\n')
-	html.write('			a:visited { text-decoration:none; font-weight:bold; color:#0063b0; }\n')
+	html.write('			a:visited { text-decoration:none; font-weight:bold; color:#e76e00; }\n')
 	html.write('		</style>\n')
 	html.write('	</head>\n')
 
