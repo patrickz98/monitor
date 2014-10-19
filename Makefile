@@ -27,11 +27,16 @@ lib:
 chown:
 	sudo find . -user root -exec chown odroid:odroid {} \;
 
-html-divergent:
-	python analytics-html-sort.py
-	python analytics-html-unsort.py
+week:
+	python week-html.py
+	
+	sudo cp week.html /var/www/patrickz/
+	sudo cp week.html /var/www/odroid/
+	
+	sudo chown www-data:www-data /var/www/patrickz/week.html
+	sudo chown www-data:www-data /var/www/odroid/week.html
 
-web: chown lib all
+web: chown lib all week
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
 

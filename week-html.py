@@ -1,10 +1,16 @@
 #!/usr/bin/python
 import os
+import time
+import re
 import MySQLdb as mdb
+import operator
+from collections import OrderedDict
 
 import blacklist
 import conf
+from htmlgenerator import graph
 from mysql import mysqldata
+from mysql import mysqlnews
 
 con = conf.con
 
@@ -39,20 +45,80 @@ def week():
 				
 				if data >= cache and x["Word"] not in known:
 					aver = average(x["Word"])
-				
-#					print x["Word"], len(mysqldata(x["Word"])), aver)
-				
+								
 					if highlight["average"] < aver:
 						highlight.update({ "Word" : x["Word"], "average" : aver, "days" : data })
 						cache = data
-					
+
 					known.append(x["Word"])
 
 	return highlight
 
 def main():
-	weekword = week()
-	print weekword
+	print "create -->  week.html"
+
+	weekword = week()	
+	word = weekword["Word"]
+
+	html = open("week.html", "w+")
+
+
+	cache = mysqlnews(word)
+	cache2 = sorted(mysqlnews(word), key=operator.itemgetter(2))
 	
+	html.write('<!doctype html>\n')
+	html.write('<html>\n')
+	html.write('	<head>\n')
+	html.write('\n')
+
+	html.write('		<title>Woche</title>\n')
+	html.write('		<link rel="icon" type="image/x-icon" href="./news.ico" />\n')
+	html.write('		<link rel="apple-touch-icon" href="./news.png"/>\n')
+	html.write('\n')
+
+	html.write('		<script src="./Chart.js"></script>\n')
+	html.write('		<style type="text/css">\n' )
+	html.write('			a:link { text-decoration:none; color:#000000; }\n')
+	html.write('			a:visited { text-decoration:none; color:#0063b0; }\n')
+	html.write('\n')
+
+	html.write('		</style>\n')
+	html.write('\n')
+
+	html.write('	</head>\n')
+	html.write('	<body>\n')
+	html.write('		<h1>Wort der Woche: ' + word + '</h1>\n')
+	html.write('		<h3>Durchschitzwert von ' + str(weekword["average"]) + " an " + str(weekword["days"]) + ' Tagen</h3>\n')
+
+	
+	try:
+		html.write("\t\t<p>" +  "Artikel Heute mit " + word + ": " + str(mysqldata(word)[time.strftime("%Y%m%d")]) + "</p>\n")
+	except:
+		html.write("\t\t<p>" +  "Artikel Heute mit " + word + ":" + "</p>\n")
+		
+	graph(word, html)
+		
+	html.write("\t\t<h2>" +  "Schlagzeilen Heute: " + "</h2>\n")
+	
+	for x in cache2:
+		if x[2] == time.strftime("%Y%m%d"):
+			title = x[0] + " (" + x[1] + ")"
+			html.write('		<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
+
+	
+	html.write("		<p></p>\n")
+	html.write("		<h2>" +  "Archiv:" + "</h2>\n")
+	html.write("		<p></p>\n")
+	
+	for x in reversed(cache2):
+		if x[2] != time.strftime("%Y%m%d"):
+			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
+			html.write('\t\t<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
+		
+	html.write("</body>\n")
+	html.write("</html>\n")
+
+	html.close()
+
 main()
 con.close()
