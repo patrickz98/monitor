@@ -64,12 +64,10 @@ def main():
 #			print x, average[x], "-->", average[x] / count(x)
 			big = (average[x] / count(x), x)
 	
-	print "most:", big[1], "-->", big[0]
-	
+	### data for chart ###
 	chart = {}
 	for x in raw:
 		if x[0] == big[1]:
-			print x[2], "-->", x[1]
 			chart.update({ x[2] : x[1] })
 
 	html = open("week.html", "w+")
