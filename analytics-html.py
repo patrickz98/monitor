@@ -97,10 +97,10 @@ def main():
 	html.write('\n')
 
 	### Search ###
-	html.write('		<form name="input" action="search.php" method="get">')
-	html.write('			Suche: <input type="text" name="search" size="40" maxlength="50">')
-	html.write('			<input type="submit" value="Suchen">')
-	html.write('		</form>')
+	html.write('		<form name="input" action="search.php" method="get">\n')
+	html.write('			<input type="text" name="search" size="40" maxlength="50">\n')
+	html.write('			<input type="submit" value="Suchen">\n')
+	html.write('		</form>\n')
 	html.write('\n')
 	
 	html.write('		<p style="font-size:65px;"></p>\n')
