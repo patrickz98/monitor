@@ -15,7 +15,7 @@ Install MySql:
 
 Todo:
 
-* search interface
+* search interface graph
 
 Quellen:
 * http://www.chartjs.org/docs/
@@ -26,10 +26,8 @@ Quellen:
 
 Notes:
 
-Python webserver
+Apache Python
 * sudo apt-get install libapache2-mod-python
-
-Conf
 * AddHandler mod_python .psp
   PythonHandler mod_python.psp
   PythonDebug On
