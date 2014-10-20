@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-bad = ["haelt", "sicher", "tritt", "essen", "rein",
-       "sich", "offen", "Leute", "Fuenf", "echt",
-       "legt", "laenger", "zeigt", "lang", "gibt",
+bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
+       "sich", "offen", "Leute", "Fuenf", "echt", "Ihre",
+       "legt", "laenger", "zeigt", "lang", "gibt", "gern",
        "Woche", "Jahren", "kein", "euch", "Kein", "Test",
        "eine", "muss", "oben", "haben", "sein", "richtig",
        "laesst", "startet", "Video", "unter", "here", "drei", "gehen",
