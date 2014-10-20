@@ -15,7 +15,7 @@ def main():
 		
 		datadb = cur.execute("SHOW TABLES")
 		rows = cur.fetchall()
-		data = [x['Tables_in_monitor'] for x in rows]
+		data = [x['Tables_in_%s' % conf.db] for x in rows]
 		
 		for x in data:
 			if int(time.strftime("%Y%m%d")) - 14 > int(x[4:]):

@@ -14,7 +14,7 @@ def mysqlnews(search):
 		
 		datadb = cur.execute("SHOW TABLES")
 		rows = cur.fetchall()
-		data = [x['Tables_in_monitor'] for x in rows if "news" in x['Tables_in_monitor']]
+		data = [x['Tables_in_%s' % conf.db] for x in rows if "news" in x['Tables_in_%s' % conf.db]]
 		
 		for db in data:
 			cur.execute("SELECT * FROM %s" % db)
@@ -34,7 +34,7 @@ def mysqldata(search):
 		
 		datadb = cur.execute("SHOW TABLES")
 		rows = cur.fetchall()
-		data = [x['Tables_in_monitor'] for x in rows if "data" in x['Tables_in_monitor']]
+		data = [x['Tables_in_%s' % conf.db] for x in rows if "data" in x['Tables_in_%s' % conf.db]]
 		
 		for db in data:
 			cur.execute("SELECT * FROM %s" % db)
