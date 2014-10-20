@@ -56,8 +56,8 @@ def mydata():
     			str(time.strftime("%Y%m%d")))
 		
 		for Cluster in list:
-			cur.execute("INSERT INTO data%s(Word, Cluster) VALUES('%s', '%s')" % \
-				(str(time.strftime("%Y%m%d")), str(Cluster), str(list[Cluster])))
+			cur.execute("INSERT INTO data%s(Word, Cluster) VALUES('%s', '%d')" % \
+				(str(time.strftime("%Y%m%d")), str(Cluster), int(list[Cluster])))
 		
 		con.commit()
 	con.close()

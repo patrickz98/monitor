@@ -33,11 +33,11 @@ chown:
 week:
 	python week-html.py
 	
-	sudo cp week.html /var/www/patrickz/
-	sudo cp week.html /var/www/odroid/
+	sudo cp week-word.html /var/www/patrickz/
+	sudo cp week-word.html /var/www/odroid/
 	
-	sudo chown www-data:www-data /var/www/patrickz/week.html
-	sudo chown www-data:www-data /var/www/odroid/week.html
+	sudo chown www-data:www-data /var/www/patrickz/week-word.html
+	sudo chown www-data:www-data /var/www/odroid/week-word.html
 
 web: chown lib all week
 	sudo cp Chart.js /var/www/patrickz/

@@ -60,7 +60,7 @@ def main():
 	weekword = week()	
 	word = weekword["Word"]
 
-	html = open("week.html", "w+")
+	html = open("week-word.html", "w+")
 
 
 	cache = mysqlnews(word)
