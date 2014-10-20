@@ -31,13 +31,17 @@ chown:
 	sudo find . -user root -exec chown odroid:odroid {} \;
 
 week:
-	python week-html.py
+	python week-word-html.py
+	python week-data-html.py
 	
-	sudo cp week-word.html /var/www/patrickz/
-	sudo cp week-word.html /var/www/odroid/
+	sudo cp week-word.html week-data.html /var/www/patrickz/
+	sudo cp week-word.html week-data.html /var/www/odroid/
 	
 	sudo chown www-data:www-data /var/www/patrickz/week-word.html
 	sudo chown www-data:www-data /var/www/odroid/week-word.html
+
+	sudo chown www-data:www-data /var/www/patrickz/week-data.html
+	sudo chown www-data:www-data /var/www/odroid/week-data.html
 
 web: chown lib all week
 	sudo cp Chart.js /var/www/patrickz/
