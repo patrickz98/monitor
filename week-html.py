@@ -88,7 +88,7 @@ def main():
 	html.write('	</head>\n')
 	html.write('	<body>\n')
 	html.write('		<h1>' + word + '</h1>\n')
-	html.write('		<h3>Durchschitzwert von ' + str(weekword["average"]) + " an " + str(weekword["days"]) + ' Tagen</h3>\n')
+	html.write('		<h3>Durchschnittswerte von ' + str(weekword["average"]) + " an " + str(weekword["days"]) + ' Tagen</h3>\n')
 
 	
 	try:
