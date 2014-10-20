@@ -55,7 +55,7 @@ def week():
 	return highlight
 
 def main():
-	print "create -->  week.html"
+	print "create -->  week-word.html"
 
 	weekword = week()	
 	word = weekword["Word"]

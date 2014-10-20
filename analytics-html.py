@@ -93,7 +93,7 @@ def main():
 
 	html.write('		<h1>' + time.strftime('%H:%M %d.%m.%Y') + '</h1>\n')
 	html.write('		<p>Eine Seite zur Weststellung von Medialer Aufmerksamkeit, im Bezug auf Schlagwoerter</p>\n')
-	html.write('		<p>Mit Daten von: Spiegel Online, taz.de, Faz, Sueddeuchen, Stern, Zeit, n-tv, Die Welt, Handelsblatt</p>\n')
+	html.write('		<p>Mit Daten von: Spiegel Online, taz.de, Faz, Sueddeuchen, Stern, Zeit, n-tv, Die Welt, Handelsblatt, Focus</p>\n')
 	html.write('\n')
 
 	### Search ###

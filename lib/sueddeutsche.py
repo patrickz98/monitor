@@ -23,7 +23,7 @@ def sueddeutsche():
 
 	cache = {}
 	for x in find:
-		title = x[1] + x[2]
+		title = x[1] + ": " + x[2]
 
 		if "\"" in title: title = re.sub(r"\"", "", title)
 		if "'" in title: title = re.sub(r"'", "", title)

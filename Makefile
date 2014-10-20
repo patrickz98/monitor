@@ -1,5 +1,7 @@
 all:
 	python analytics-html.py
+	python week-word-html.py
+	python week-data-html.py
 
 news:
 	python -c 'import header; header.main();'
@@ -30,10 +32,7 @@ lib:
 chown:
 	sudo find . -user root -exec chown odroid:odroid {} \;
 
-week:
-	python week-word-html.py
-	python week-data-html.py
-	
+week:	
 	sudo cp week-word.html week-data.html /var/www/patrickz/
 	sudo cp week-word.html week-data.html /var/www/odroid/
 	

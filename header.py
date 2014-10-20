@@ -3,7 +3,19 @@
 import time
 
 import conf
-from lib import tagesspiegel, welt, zeit, sueddeutsche, stern, spon, faz, ntv, taz, handelsblatt
+
+from lib import tagesspiegel 
+from lib import welt
+from lib import zeit
+from lib import sueddeutsche
+from lib import stern
+from lib import spon
+from lib import faz
+from lib import ntv
+from lib import taz
+from lib import handelsblatt
+from lib import focus
+
 
 def main():
 	con = conf.con
@@ -59,7 +71,13 @@ def main():
 		taz.taz()
 	except:
 		print "\033[91mtaz.de Offline\033[0m"
+	
 	try:
 		handelsblatt.handelsblatt()
 	except:
-                print "\033[91mHandelsblatt Offline\033[0m"
+	        print "\033[91mHandelsblatt Offline\033[0m"
+        
+	try:
+		focus.focus()
+	except:
+	        print "\033[91mFocus Offline\033[0m"
