@@ -21,6 +21,9 @@ search:
 backup:
 	sh monitor-mysql-backup.sh
 
+archiv: backup
+	mysql -uroot -pblabla6 monitorbig < monitor.sql
+	
 lib:
 	curl "https://raw.githubusercontent.com/nnnick/Chart.js/master/Chart.js" 1> Chart.js 2>/dev/null
 
