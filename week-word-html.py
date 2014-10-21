@@ -115,7 +115,7 @@ def main():
 		if x[2] != time.strftime("%Y%m%d"):
 			date = x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4]
 			if lastdate != date:
-				html.write("\t\t<h2>%s</h2>" % date)
+				html.write("\t\t<h2 id=\'%s\'>%s</h2>\n" % (date, date))
 				lastdate = date
 
 			title = x[0] + " (" + x[1] + ")"
