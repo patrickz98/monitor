@@ -72,8 +72,9 @@ def main():
 						% (weekword[x][1], conf.htmldir, weekword[x][0], 
 						   weekword[x][0], weekword[x][1]))
 			
-			htmlgenerator.main(weekword[x][0])				
-	
+			htmlgenerator.main(weekword[x][0])
+
+	html.write('\t\t<p style="font-size:20px;">&nbsp;</p>\n')
 	html.write('	</body>\n')
 	html.write('</html>\n')
 	

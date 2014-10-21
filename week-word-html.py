@@ -114,7 +114,8 @@ def main():
 		if x[2] != time.strftime("%Y%m%d"):
 			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
 			html.write('\t\t<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
-		
+
+	html.write('\t\t<p style="font-size:20px;">&nbsp;</p>\n')
 	html.write("</body>\n")
 	html.write("</html>\n")
 
