@@ -66,7 +66,7 @@ def sueddeutsche():
 		cur = con.cursor()
 		for word in find:	    	        	    			
 	    		cur.execute("INSERT INTO news%s(Headlines, Newspaper, link) VALUES('%s', '%s', '%s')" % \
-	    			(str(time.strftime("%Y%m%d")), str(word), 'sueddeutsche', str(find[word])))
+	    			(str(time.strftime("%Y%m%d")), str(word), 'Sueddeutsche', str(find[word])))
 			bla.append(word)
 	
 		for word in find2:

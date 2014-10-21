@@ -97,7 +97,7 @@ def main(search):
 		
 	graph(search, html)
 		
-	html.write("\t\t<h2>" +  "Schlagzeilen Heute: " + "</h2>\n")
+	html.write("\t\t<h1>" +  "Schlagzeilen Heute: " + "</h1>\n")
 	
 	for x in cache2:
 		if x[2] == time.strftime("%Y%m%d"):
@@ -106,12 +106,18 @@ def main(search):
 
 	
 	html.write("		<p></p>\n")
-	html.write("		<h2>" +  "Archiv:" + "</h2>\n")
+	html.write("		<h1>" +  "Archiv:" + "</h1>\n")
 	html.write("		<p></p>\n")
-	
+
+	lastdate = ""
 	for x in reversed(cache2):
 		if x[2] != time.strftime("%Y%m%d"):
-			title = x[0] + " (" + x[1] + ")" + " (" + x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4] + ")"
+			date = x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4]
+			if lastdate != date:
+				html.write("\t\t<h2>%s</h2>" % date)
+				lastdate = date
+
+			title = x[0] + " (" + x[1] + ")"
 			html.write('\t\t<p style="font-size:18px;"><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
 
 	html.write('\t\t<p style="font-size:20px;">&nbsp;</p>\n')		
