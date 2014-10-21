@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
-       "sich", "offen", "Leute", "Fuenf", "echt", "Ihre",
+       "sich", "offen", "Leute", "Fuenf", "echt", "Ihre", "stehen",
        "legt", "laenger", "zeigt", "lang", "gibt", "gern",
        "Woche", "Jahren", "kein", "euch", "Kein", "Test",
        "eine", "muss", "oben", "haben", "sein", "richtig",
@@ -11,7 +11,7 @@ bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
        "sind", "auch", "+++:", "einen", "fahren", "biete",
        "nicht", "noch", "ohne", "seit", "letzte", "Drei", "Unter", "Wochen",
        "Diese", "diese", "immer", "einer", "bring", "erste",
-       "Neue", "nach", "fuer", "ueber", "frei", "macht",
+       "Neue", "nach", "fuer", "ueber", "frei", "macht", "dieser",
        "UeBERSICHT", "unter", "will", "Ueber", "alte", "keine",
        "Zwei","zwei", "alle", "eins", "Nach", "holt", "wirft",
        "weiter", "mein", "Deutschland", "nehmen", "Inter",

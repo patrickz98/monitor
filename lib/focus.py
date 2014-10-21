@@ -26,8 +26,7 @@ def focus():
 		if len(title) > 10 \
 		and "=" not in title \
 		and "FOCUS" not in title \
-		and "Bildergalerien" not in title \
-		and ":" in title:
+		and "Bildergalerien" not in title:
 			if "\"" in title: title = re.sub(r"\"", "", title)
 			if "'" in title: title = re.sub(r"'", "", title)
 			if "„" in title: title = re.sub(r"„", "", title)
