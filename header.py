@@ -24,7 +24,7 @@ def main():
 
 		cur.execute("DROP TABLE IF EXISTS news%s" % str(time.strftime("%Y%m%d")))
     
-		cur.execute("CREATE TABLE news%s(Headlines VARCHAR(200), Newspaper VARCHAR(20), link VARCHAR(300))" % \
+		cur.execute("CREATE TABLE news%s(Headlines VARCHAR(300), Newspaper VARCHAR(20), link VARCHAR(400))" % \
     		str(time.strftime("%Y%m%d")))
 
 	try:

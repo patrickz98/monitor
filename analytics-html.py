@@ -110,13 +110,14 @@ def main():
 			
 			if "\"" in word: word = re.sub(r"\"", "", word)
 			
-			html.write(('\t\t<p style="font-size:%dpx;">' % int(list[word] * 4.5)) + \
+			html.write(('\t\t<p style="font-size:%dpx;">' % int(list[word] * 3)) + \
 						('<a href="./html/%s.html">' % str(word)) + str(word) + ': ' + str(list[word]) + \
 						'</a></p>\n')
 
 			### Html Generierung ####
 			htmlgenerator.main(word)
-	
+
+	html.write('\t\t<p style="font-size:20px;">&nbsp;</p>\n')
 	html.write('	</body>\n')
 	html.write('</html>\n')
 	html.close()
