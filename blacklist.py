@@ -36,7 +36,7 @@ bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
        "doch", "nimmt", "Viel", "sechs", "Vier", "sagt", "lass", "Wiesn",
        "Erste", "Voll", "reich", "rote", "renn", "ringt", "einig", "esse",
        "enge", "start", "bereit", "Miss", "zieht", "ieder", "hatte",
-       "Spiele", "League", "Fussball", "Champions", "Allgemein", "schon",
+       "Spiele", "Allgemein", "schon",
        "erhoeht", "warnt", "Nord", "ruck", "Profi", "ersten", "Fussball:",
        "liess", "ausser", "erneut", "feiert", "spielt", "Moto", "euer",
        "Star", "Neues", "bleibt", "bitten", "fordert", "West", "dass",
@@ -47,7 +47,7 @@ bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
        "ordnet", "sehe", "enger", "erstmals", "endet", "willige", 
        "ordnet", "trotz", "enger", "sehe", "ante", "Auch", "morgen",
        "fuehren", "schwarze", "Aufs", "Bahn-", "griff", "wert", "zahlen",
-       "nich", "Mens", "eiert" , "ruft", "gross"]
+       "nich", "Mens", "eiert" , "ruft", "gross", "Schlagzeilen"]
 
 exception = ["EU", "Eu", "USA", "BND", "IS", "Tod", "CIA", "NSA", "ARD", "ZDF",
 	   		 "Uni", "UNI", "UNO", "CDU", "CSU", "SPD", "AFD", "Afd", "FDP", "Uno", "BMW",

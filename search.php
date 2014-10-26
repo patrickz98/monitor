@@ -8,7 +8,7 @@
 		<script src="../Chart.js"></script>
 		<style type="text/css">
 			a:link { text-decoration:none; color:#000000; }
-			a:visited { text-decoration:none; color:#0063b0; }
+			a:visited { text-decoration:none; color:#e76e00; }
 
 		</style>
 
