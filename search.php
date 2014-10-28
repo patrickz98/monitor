@@ -31,13 +31,6 @@
 	$sql = "SHOW TABLES FROM $dbname";
 	$result = mysql_query($sql);
 
-	if (!$result) 
-	{
-	    echo "DB Fehler, konnte Tabellen nicht auflisten\n";
-	    echo 'MySQL Fehler: ' . mysql_error();
-	    exit;
-	}
-
 	while ($row = mysql_fetch_row($result)) 
 	{
 		if (strpos($row[0], "news") !== false) 
@@ -53,7 +46,7 @@
 						if (strpos($line['Headlines'], $search) !== false) 
 						{
 							echo "\t\t<p style=\"font-size:18px;\"><a href=" 
-							. $line['link'] . ">" . $line['Headlines'] . " " 
+							. $line['link'] . " target='_blank'>" . $line['Headlines'] . " " 
 							. "(" . $line['Newspaper'] . ")"
 							. "</a></p>\n";  
 						}
@@ -95,7 +88,7 @@
 						if (strpos($line['Headlines'], $search) !== false) 
 						{
 							echo "\t\t<p style=\"font-size:18px;\"><a href=" 
-							. $line['link'] . "target=\"_blank\">" . $line['Headlines'] . " " 
+							. $line['link'] . " target='_blank'>" . $line['Headlines'] . " " 
 							. "(" . $line['Newspaper'] . ")"
 							. "</a></p>\n";  
 						}
