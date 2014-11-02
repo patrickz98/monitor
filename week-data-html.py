@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import os
 import MySQLdb as mdb
 
@@ -42,7 +43,7 @@ def main():
 #		print  weekword[x], x
 		data.append(x)
 	
-	print "create --> week-data.html"
+	print "create --> ./week-data.html"
 
 	html = open("week-data.html", "w+")
 	

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import os
 import time
 import re
@@ -55,7 +56,7 @@ def week():
 	return highlight
 
 def main():
-	print "create -->  week-word.html"
+	print "create -->  ./week-word.html"
 
 	weekword = week()	
 	word = weekword["Word"]

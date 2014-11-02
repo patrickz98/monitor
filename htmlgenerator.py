@@ -6,6 +6,7 @@ import re
 import MySQLdb as mdb
 from collections import OrderedDict
 import operator
+import unicodedata
 
 import conf
 from mysql import mysqldata
@@ -59,10 +60,11 @@ def main(search):
 		os.mkdir(htmldir)
 	except OSError:
 		pass
+	
+	link = linkword = unicodedata.normalize('NFKD', search.decode("utf8")).encode('ascii','ignore')
+	print "create --> " + htmldir + link + ".html"
 
-	print "create --> " + htmldir + search + ".html"
-
-	html = open(htmldir + search + ".html", "w+")
+	html = open(htmldir + link + ".html", "w+")
 
 	cache = mysqlnews(search)
 	cache2 = sorted(mysqlnews(search), key=operator.itemgetter(2))
@@ -71,7 +73,8 @@ def main(search):
 	html.write('<html>\n')
 	html.write('	<head>\n')
 	html.write('\n')
-
+	
+	html.write('    	<meta http-equiv="content-type" content="text/html; charset=utf-8">')
 	html.write('		<title>%s</title>\n' % search)
 	html.write('		<link rel="icon" type="image/x-icon" href="../news.ico" />\n')
 	html.write('		<link rel="apple-touch-icon" href="../news.png"/>\n')

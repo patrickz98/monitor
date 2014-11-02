@@ -8,6 +8,8 @@ news:
 
 mysql:
 	python analytics.py > /dev/null
+	python cleaner.py
+	python cleaner-db.py
 
 clean:
 	find . -name '*.pyc' -delete

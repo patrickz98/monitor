@@ -5,6 +5,7 @@ import re
 import time
 import MySQLdb as mdb
 from collections import OrderedDict
+import unicodedata
 
 import conf 
 import blacklist
@@ -19,6 +20,7 @@ bad = blacklist.bad
 list = {}
 
 html = open("aktuell.html", "w+")
+print "create --> ./aktuell.html"
 
 def mysql():
 	Headlines = {}
@@ -65,8 +67,6 @@ def mydata():
 def main():
 	global list
 	global data
-        
-	print "create --> aktuell.html"
     
 	for b in data:
 		for c in b.split():
@@ -78,6 +78,7 @@ def main():
 	html.write('<!doctype html>\n')
 	html.write('<html>\n')
 	html.write('	<head>\n')
+	html.write('    	<meta http-equiv="content-type" content="text/html; charset=utf-8">')
 	html.write('		<title>Monitor</title>\n')
 	html.write('		<link rel="icon" type="image/x-icon" href="news.ico" />\n')
 	html.write('		<link rel="apple-touch-icon" href="news.png"/>\n')
@@ -109,9 +110,10 @@ def main():
 		if list[word] >= 8 and word not in bad:
 			
 			if "\"" in word: word = re.sub(r"\"", "", word)
+			linkword = unicodedata.normalize('NFKD', word.decode("utf8")).encode('ascii','ignore')
 			
 			html.write(('\t\t<p style="font-size:%dpx;">' % int(list[word] * 3)) + \
-						('<a href="./html/%s.html">' % str(word)) + str(word) + ': ' + str(list[word]) + \
+						('<a href="./html/%s.html">' % str(linkword)) + str(word) + ': ' + str(list[word]) + \
 						'</a></p>\n')
 
 			### Html Generierung ####
