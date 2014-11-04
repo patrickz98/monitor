@@ -34,3 +34,4 @@ Apache Python
 
 Stuff
 * display:inline
+* ALTER DATABASE monitor CHARACTER SET utf8 COLLATE utf8_unicode_ci;
