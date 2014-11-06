@@ -61,7 +61,9 @@ def main(search):
 	except OSError:
 		pass
 	
-	link = linkword = unicodedata.normalize('NFKD', search.decode("utf8")).encode('ascii','ignore')
+	link = search
+	if "/" in link: link = re.sub(r"/", "", link)
+	link = unicodedata.normalize('NFKD', link.decode("utf8")).encode('ascii','ignore')
 	print "create --> " + htmldir + link + ".html"
 
 	html = open(htmldir + link + ".html", "w+")

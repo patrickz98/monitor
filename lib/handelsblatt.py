@@ -34,7 +34,8 @@ def handelsblatt():
 				if "„" in title: title = re.sub(r"„", "", title)
 				if "“" in title: title = re.sub(r"“", "", title)
 #				if "-" in title: title = re.sub(r"-", " ", title)
-
+				if "\\" in title: title = re.sub(r"\\", "", title)
+				if "/" in title: title = re.sub(r"/", "", title)
 				if title[:1] == " ": title = title[1:]
 
 # 				if "ß" in title: title = re.sub(r"ß", "ss", title)

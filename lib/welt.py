@@ -28,6 +28,9 @@ def welt():
 		if "'" in title: title = re.sub(r"'", "", title)
 		if "„" in title: title = re.sub(r"„", "", title)
 		if "“" in title: title = re.sub(r"“", "", title)
+		if "\\" in title: title = re.sub(r"\\", "", title)
+		if "/" in title: title = re.sub(r"/", "", title)
+
 #		if "-" in title: title = re.sub(r"-", " ", title)
 
 # 		if "ß" in title: title = re.sub(r"ß", "ss", title)
