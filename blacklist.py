@@ -48,7 +48,8 @@ bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
        "ordnet", "trotz", "enger", "sehe", "ante", "Auch", "morgen",
        "fuehren", "schwarze", "Aufs", "Bahn-", "griff", "wert", "zahlen",
        "nich", "Mens", "eiert" , "ruft", "gross", "Schlagzeilen", "für", 
-       "über", "rät", "Über", "zurück", "können", "Tür"]
+       "über", "rät", "Über", "zurück", "können", "Tür", "Fuß", "fahr",
+       "hält", "führt", "Für", "lässt"]
 
 exception = ["EU", "Eu", "USA", "BND", "IS", "Tod", "CIA", "NSA", "ARD", "ZDF",
 	   		 "Uni", "UNI", "UNO", "CDU", "CSU", "SPD", "AFD", "Afd", "FDP", "Uno", 
