@@ -45,20 +45,29 @@ week:
 	sudo chown www-data:www-data /var/www/odroid/week-data.html
 
 web: chown lib all week
+    sudo cp monitor.php /var/www/patrickz/
+    sudo cp monitor.php /var/www/odroid/
+
+    sudo chown www-data:www-data /var/www/patrickz/monitor.php
+    sudo chown www-data:www-data /var/www/odroid/monitor.php
+
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
 
 	sudo chown www-data:www-data /var/www/patrickz/Chart.js
 	sudo chown www-data:www-data /var/www/odroid/Chart.js
 
-	sudo cp news.png news.ico /var/www/patrickz/
-	sudo cp news.png news.ico /var/www/odroid/
+	sudo cp news.png news.ico icon.png /var/www/patrickz/
+	sudo cp news.png news.ico icon.png /var/www/odroid/
 
 	sudo chown www-data:www-data /var/www/patrickz/news.png
 	sudo chown www-data:www-data /var/www/odroid/news.png
 	
 	sudo chown www-data:www-data /var/www/patrickz/news.ico
 	sudo chown www-data:www-data /var/www/odroid/news.ico
+
+    sudo chown www-data:www-data /var/www/patrickz/icon.png
+    sudo chown www-data:www-data /var/www/odroid/icon.png
 
 	sudo cp aktuell.html /var/www/patrickz/
 	sudo cp aktuell.html /var/www/odroid/
