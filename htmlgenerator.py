@@ -89,6 +89,16 @@ def main(search):
 	html.write('			h1 {text-decoration:none; color:#ffffff; }\n')
 	html.write('			h2 {text-decoration:none; color:#ffffff; }\n')
 	html.write('			p {color:#ffffff; }\n')
+	html.write('			a {font-family: helvetica;}')
+	html.write('			hr {\
+			    	border: 0;\
+					height: 5px;\
+                    background-image: -webkit-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));\
+                    background-image:    -moz-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));\
+                    background-image:     -ms-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));\
+                    background-image:      -o-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));\
+                        	}\n')
+
 
 	html.write('\n')
 	html.write('		</style>\n')
@@ -106,13 +116,14 @@ def main(search):
 	graph(search, html)
 
 	html.write("\t\t<h1>" +  "Schlagzeilen Heute: " + "</h1>\n")
+	html.write("<hr>");
 
 	for x in cache2:
 		if x[2] == time.strftime("%Y%m%d"):
 			title = x[0] + " (" + x[1] + ")"
 			html.write('		<p><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
 
-
+	html.write("<hr>");
 	html.write("		<p></p>\n")
 	html.write("		<h1>" +  "Archiv:" + "</h1>\n")
 	html.write("		<p></p>\n")
@@ -122,14 +133,14 @@ def main(search):
 		if x[2] != time.strftime("%Y%m%d"):
 			date = x[2][-2:] + "." + x[2][4:-2] + "." + x[2][:4]
 			if lastdate != date:
+				html.write("<hr>");
 				html.write("\t\t<h2 id=\"%s\">%s</h2>\n" % (date, date))
 				lastdate = date
 
 			title = x[0] + " (" + x[1] + ")"
 			html.write('\t\t<p><a href="%s" target="_blank">%s</a></p>\n' % (cache[x], title))
 
-	html.write('\t\t<p>&nbsp;</p>\n')
-	html.write("</body>\n")
+	html.write("\t</body>\n")
 	html.write("</html>\n")
 
 	html.close()

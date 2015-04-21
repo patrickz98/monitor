@@ -5,6 +5,7 @@
 		<title>Monitor</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link rel="icon" href="icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icon-apple.png"/>
 
     <style>
       h1 { font-size: 20px; color: white; }
