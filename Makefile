@@ -45,11 +45,11 @@ week:
 	sudo chown www-data:www-data /var/www/odroid/week-data.html
 
 web: chown lib all week
-    sudo cp monitor.php /var/www/patrickz/
-    sudo cp monitor.php /var/www/odroid/
+	sudo cp monitor.php /var/www/patrickz/
+	sudo cp monitor.php /var/www/odroid/
 
-    sudo chown www-data:www-data /var/www/patrickz/monitor.php
-    sudo chown www-data:www-data /var/www/odroid/monitor.php
+	sudo chown www-data:www-data /var/www/patrickz/monitor.php
+	sudo chown www-data:www-data /var/www/odroid/monitor.php
 
 	sudo cp Chart.js /var/www/patrickz/
 	sudo cp Chart.js /var/www/odroid/
