@@ -49,10 +49,7 @@
 				$rand2 = $rand / 2;
 				$TextSize = $size * 3;
 				$LineHeight = $rand2 * 2;
-				$url = "http://patrickz.no-ip.org/
-					html/" .
-					$URLname .
-					".html";
+				$url = "http://patrickz.no-ip.org/search?q={$name}";
 
 				$opt = "height: {$rand}px;
 						width: {$rand}px;

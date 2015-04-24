@@ -12,7 +12,7 @@
 			a:visited { text-decoration:none; color:#7f007f; }
 
       h1 {
-				font-size: 50px;
+				font-size: 60px;
 				color: white;
 				height: 150px;
 				width: 150px;
@@ -25,8 +25,8 @@
 				line-height: 150px;
 			}
 
-			h2 { font-family: helvetica; font-size: 30px; color: white; }
-			h3 { font-family: helvetica; font-size: 20px; color: white; }
+			h2 { font-family: helvetica; font-size: 40px; color: white; font-weight: bold; }
+			h3 { font-family: helvetica; font-size: 35px; color: white; font-weight: bold; }
 
       div { font-family: helvetica; font-size: 20px; color: white; }
 
@@ -65,12 +65,17 @@
 			$tabels = mysql_query("SHOW TABLES FROM $dbname");
 			$traffic_tabels = array();
 			$traffic = array();
+			$news_archiv = array();
 
 			while($row = mysql_fetch_array($tabels))
 			{
 				if (strpos($row[0], "data") !== false)
 				{
 					$traffic_tabels[] = $row[0];
+				}
+				elseif (strpos($row[0], "news") !== false && substr($row[0], 4) !== date("Ymd"))
+				{
+					$news_archiv[] = $row[0];
 				}
 			}
 
@@ -90,7 +95,9 @@
 			if (sizeof($traffic) >= 4)
 			{
 				echo "\t<div style=\"width:100%\">\n";
-				echo "\t\t<canvas id=\"Euro\" height=\"450\" width=\"600\"></canvas>\n";
+//				echo "\t\t<canvas id=\"Euro\" height=\"450\" width=\"600\"></canvas>\n";
+				echo "\t\t<canvas id=\"{$search}\" height=\"50%\" width=\"100%\"></canvas>\n";
+
 				echo "\t</div>\n";
 
 				echo "\t<script>\n";
@@ -147,28 +154,19 @@
 
 			mysql_free_result($Headlines_today);
 
-			$all_rows = array();
+			$news_archiv = array_reverse($news_archiv);
 
-			while($row = mysql_fetch_array($tabels))
+			echo "<hr><h2>Archiv</h2>";
+
+			foreach ($news_archiv as $news)
 			{
-				if (strpos($row[0], "news") !== false && substr($row[0], 4) !== date("Ymd"))
-				{
-					$all_rows[] = $row[0];
-				}
-			}
-
-			$all_rows = array_reverse($all_rows);
-
-			foreach ($all_rows as $news)
-			{
-					echo "<h3>"
+					echo "<hr>\n<h3>"
 					. substr($news, -2) . "."
 					. substr($news, 8, -2) . "."
 					. substr($news, 4, -4)
 					. "</h3>\n";
 
-					$query2 = "SELECT * FROM" . " $dbname.{$news}";
-					$result2 = mysql_query($query2);
+					$result2 = mysql_query("SELECT * FROM" . " $dbname.{$news}");
 
 					while ($line = mysql_fetch_array($result2))
 					{
@@ -180,6 +178,7 @@
 							. "</a></p>\n";
 						}
 					}
+					mysql_free_result($result2);
 				}
 				mysql_free_result($tabels);
 			?>
