@@ -47,7 +47,7 @@
 
 		<?php
 
-			$search = $_GET["q"];
+			$search = urldecode($_GET["q"]);
 			$dbname = 'monitor';
 
 			date_default_timezone_set('UTC');
@@ -95,7 +95,6 @@
 			if (sizeof($traffic) >= 4)
 			{
 				echo "\t<div style=\"width:100%\">\n";
-//				echo "\t\t<canvas id=\"Euro\" height=\"450\" width=\"600\"></canvas>\n";
 				echo "\t\t<canvas id=\"{$search}\" height=\"50%\" width=\"100%\"></canvas>\n";
 
 				echo "\t</div>\n";

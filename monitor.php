@@ -15,9 +15,6 @@
 
 
 	</head>
-	<!-- <body style="background: linear-gradient(#e5e5e5, #ffffff)"> -->
-  <!-- <body style="background: #1F2127"> -->
-
   <body style="background: #1F2127">
 
 		<?php
@@ -44,12 +41,15 @@
 			arsort($clusters);
 			foreach ($clusters as $name => $size)
 			{
-				$URLname = str_replace("\"", "", iconv("utf-8", "ascii//IGNORE", $name));
-				$rand = $size * 15;
+//				$URLname = str_replace("\"", "", iconv("utf-8", "ascii//IGNORE", $name));
+        $URLname = urlencode($name);
+
+        $rand = $size * 15;
 				$rand2 = $rand / 2;
 				$TextSize = $size * 3;
 				$LineHeight = $rand2 * 2;
-				$url = "http://patrickz.no-ip.org/search?q={$name}";
+
+				$url = "/search.php?q={$URLname}";
 
 				$opt = "height: {$rand}px;
 						width: {$rand}px;
