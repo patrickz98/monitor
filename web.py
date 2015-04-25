@@ -4,6 +4,6 @@ import os
 import time
 
 while(True):
-	os.popen("make web").readlines()
+	os.popen("python analytics.py").readlines()
 #	time.sleep(3600)
 	time.sleep(21600)
