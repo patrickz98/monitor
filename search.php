@@ -25,20 +25,28 @@
 				line-height: 150px;
 			}
 
-			h2 { font-family: helvetica; font-size: 40px; color: white; font-weight: bold; }
+			h2 {
+				font-family: helvetica;
+				font-size: 40px;
+				color: white;
+				font-weight: bold;
+				background-color: #7f007f;
+				height: 60px;
+				line-height: 60px;
+			}
+
 			h3 { font-family: helvetica; font-size: 35px; color: white; font-weight: bold; }
 
       div { font-family: helvetica; font-size: 20px; color: white; }
 
 			hr {
 				border: 0;
-				height: 5px;
+				height: 6px;
 				background-image: -webkit-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
 				background-image:    -moz-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
 				background-image:     -ms-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
 				background-image:      -o-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
 			}
-
 
 		</style>
 
@@ -103,7 +111,13 @@
 				echo "\t\tvar lineChartDataEuro = {\n";
 				echo "\t\t\tlabels : [";
 
-				foreach ($traffic as $date => $size) { echo "'$date', ";}
+				foreach ($traffic as $date => $size)
+				{
+					echo "'"
+					. substr($date, -2) . "."
+					. substr($date, 4, -2) . "."
+					. substr($date, 0, -4) . "', ";
+				}
 
 				echo "],\n";
 				echo "\t\t\tdatasets : [{\n";
@@ -155,16 +169,20 @@
 
 			$news_archiv = array_reverse($news_archiv);
 
-			echo "<hr><h2>Archiv</h2>";
+			echo "<h2>Archiv</h2>";
 
 			foreach ($news_archiv as $news)
 			{
-					echo "<hr>\n<h3>"
+					if ($news !== "news" . (String) ($todate - 1))
+					{
+						echo "\t\t<hr>\n";
+					}
+
+					echo "\t\t<h3>"
 					. substr($news, -2) . "."
 					. substr($news, 8, -2) . "."
 					. substr($news, 4, -4)
 					. "</h3>\n";
-
 					$result2 = mysql_query("SELECT * FROM" . " $dbname.{$news}");
 
 					while ($line = mysql_fetch_array($result2))
