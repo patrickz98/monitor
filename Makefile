@@ -36,7 +36,7 @@ Chart:
 chown:
 	sudo find . -user root -exec chown odroid:odroid {} \;
 
-week:	
+week:
 	python week-word-html.py
 	python week-data-html.py
 
@@ -46,27 +46,12 @@ week:
 	sudo chown www-data:www-data /var/www/patrickz/week-word.html
 	sudo chown www-data:www-data /var/www/odroid/week-word.html
 
-web: clean-web lib analytics week
-	sudo cp monitor.php /var/www/patrickz/
-	sudo cp monitor.php /var/www/odroid/
-
-	sudo cp Chart.js /var/www/patrickz/
-	sudo cp Chart.js /var/www/odroid/
+web: Chart
+	sudo cp monitor.php search.php Chart.js /var/www/patrickz/
+	sudo cp monitor.php search.php Chart.js /var/www/odroid/
 
 	sudo cp news.png news.ico icon.png icon-apple.png /var/www/patrickz/
 	sudo cp news.png news.ico icon.png icon-apple.png /var/www/odroid/
-
-	sudo cp aktuell.html /var/www/patrickz/
-	sudo cp aktuell.html /var/www/odroid/
-
-	sudo cp -r html /var/www/patrickz/
-	sudo cp -r html /var/www/odroid/
-	
-	sudo chown www-data:www-data /var/www/patrickz/html/
-	sudo chown www-data:www-data /var/www/odroid/html/
-
-	sudo chown www-data:www-data /var/www/patrickz/html/*
-	sudo chown www-data:www-data /var/www/odroid/html/*
 
     sudo chown www-data:www-data /var/www/patrickz/*
     sudo chown www-data:www-data /var/www/odroid/*
