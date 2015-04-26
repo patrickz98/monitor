@@ -26,12 +26,6 @@ Quellen:
 
 Notes:
 
-Apache Python
-* sudo apt-get install libapache2-mod-python
-* AddHandler mod_python .psp
-  PythonHandler mod_python.psp
-  PythonDebug On
-
 Stuff
 * display:inline
 * ALTER DATABASE monitor CHARACTER SET utf8 COLLATE utf8_unicode_ci;
