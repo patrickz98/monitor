@@ -5,7 +5,7 @@
 		<link rel="icon" type="image/x-icon" href="../news.ico" />
 		<link rel="apple-touch-icon" href="../news.png"/>
 
-		<script src="../Chart.js"></script>
+		<script src="./Chart.js"></script>
 		<style type="text/css">
 			a { font-family: helvetica; }
 			a:link { text-decoration:none; color:#ffffff; }
@@ -108,7 +108,7 @@
 				echo "\t</div>\n";
 
 				echo "\t<script>\n";
-				echo "\t\tvar lineChartDataEuro = {\n";
+				echo "\t\tvar lineChartData{$search} = {\n";
 				echo "\t\t\tlabels : [";
 
 				foreach ($traffic as $date => $size)
