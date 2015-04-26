@@ -103,7 +103,7 @@
 			if (sizeof($traffic) >= 4)
 			{
 				echo "\t<div style=\"width:100%\">\n";
-				echo "\t\t<canvas id=\"{$search}\" height=\"50%\" width=\"100%\"></canvas>\n";
+				echo "\t\t<canvas id=\"{$search}\" height=\"25%\" width=\"100%\"></canvas>\n";
 
 				echo "\t</div>\n";
 
