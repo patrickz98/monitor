@@ -59,16 +59,15 @@ def main():
 	for x in cluster:
 		for y in cluster:
 			for z in cluster:
-				for headline in news:
-					if x != y and x != z and y != z:
-						if not x in tmp and not y in tmp:
+				for w in cluster:
+					for headline in news:
+						if x != y and x != z and y != z and w != x and w != y and w != z:
 							if x in headline:
 								if y in headline:
 									if z in headline:
-										print x + " + " + y + " + " + z
-										txt.write(x + " + " + y + " + " + z + "\n")
+										print x + " + " + y + " + " + z + " + " + w
+										txt.write(x + " + " + y + " + " + z + " + " + w  +"\n")
 										txt.flush()
-		tmp.append(x)
 
 	txt.close()
 
