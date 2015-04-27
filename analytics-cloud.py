@@ -5,6 +5,7 @@ import re
 import time
 import MySQLdb as mdb
 from collections import OrderedDict
+import sys
 
 import conf
 
@@ -53,20 +54,23 @@ def main():
 	global cluster
 
 	txt = open("cloud2.txt", "w")
+	time = len(cluster) ** 3 * len(news)
+	count = 0
 
 	tmp = []
 
 	for x in cluster:
 		for y in cluster:
 			for z in cluster:
-				for w in cluster:
 					for headline in news:
-						if x != y and x != z and y != z and w != x and w != y and w != z:
+						count = count + 1
+						if x != y and x != z and y != z:
 							if x in headline:
 								if y in headline:
 									if z in headline:
-										print x + " + " + y + " + " + z + " + " + w
-										txt.write(x + " + " + y + " + " + z + " + " + w  +"\n")
+										print str(count / time * 100) + "% --> " + x + " + " + y + " + " + z
+										txt.write(x + " + " + y + " + " + z + "\n")
+										txt.write(headline + "\n\n")
 										txt.flush()
 
 	txt.close()
