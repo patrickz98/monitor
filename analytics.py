@@ -6,8 +6,9 @@ import time
 import MySQLdb as mdb
 from collections import OrderedDict
 
-import conf 
+import conf
 import header
+import mysql
 
 header.main()
 
@@ -16,23 +17,7 @@ bad = conf.bad
 exception = conf.exception
 list = {}
 
-def mysql():
-	Headlines = {}
-	with con:
-
-	    	cur = con.cursor(mdb.cursors.DictCursor)
-	    	cur.execute("SELECT * FROM news%s" % time.strftime("%Y%m%d"))
-
-	    	rows = cur.fetchall()
-
-	    	for row in rows:
-        		Headlines.update({row["Headlines"] : row["Newspaper"]})
-
-			con.commit()
-
-	return Headlines
-
-data = mysql()
+data = mysql.get_news(time.strftime("%Y%m%d"))
 
 def find(word):
 	global data
@@ -44,24 +29,24 @@ def find(word):
 
 def mydata():
 	with con:
-    
+
 		cur = con.cursor()
 		cur.execute("DROP TABLE IF EXISTS data%s" % str(time.strftime("%Y%m%d")))
-    
-		cur.execute("CREATE TABLE data%s(Word VARCHAR(35), Cluster VARCHAR(4))" % \
+
+		cur.execute("CREATE TABLE data%s(Word VARCHAR(50), Cluster VARCHAR(4))" % \
     			str(time.strftime("%Y%m%d")))
-		
+
 		for Cluster in list:
 			cur.execute("INSERT INTO data%s(Word, Cluster) VALUES('%s', '%d')" % \
 				(str(time.strftime("%Y%m%d")), str(Cluster), int(list[Cluster])))
-		
+
 		con.commit()
 	con.close()
 
 def main():
 	global list
 	global data
-        
+
 	for b in data:
 		for c in b.split():
 			if ":" in c: c = c[:-1]
@@ -71,10 +56,10 @@ def main():
 
 
 	list = OrderedDict(sorted(list.items(), key=lambda x:x[1]))
-	
+
 	print time.strftime("%H:%M %d.%m.%Y")
-	print 
-	
+	print
+
  	for l in reversed(list):
  		if list[l] > 6 and l not in bad:
  			print l + ": " + str(list[l])
