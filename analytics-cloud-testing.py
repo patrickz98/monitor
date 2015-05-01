@@ -15,6 +15,8 @@ def main():
 
 	cluster_string = [x for x in cluster]
 	cluster_string2 = []
+	checked_const = []
+
 	checked_words  = []
 	txt = open("cloud.txt", "w")
 	status = True
@@ -56,7 +58,8 @@ def main():
 						if test + " " + y not in cluster_string2:
 							cluster_string2.append(test + " " + y)
 
-			cluster_string = cluster_string2
+
+		cluster_string = cluster_string2
 
 	txt.close()
 
