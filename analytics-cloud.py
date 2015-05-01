@@ -53,7 +53,7 @@ def main():
 	global news
 	global cluster
 
-	txt = open("cloud2.txt", "w")
+	txt = open("cloud.txt", "w")
 	time = len(cluster) ** 3 * len(news)
 	count = 0
 
@@ -62,16 +62,17 @@ def main():
 	for x in cluster:
 		for y in cluster:
 			for z in cluster:
-					for headline in news:
-						count = count + 1
-						if x != y and x != z and y != z:
-							if x in headline:
-								if y in headline:
-									if z in headline:
-										print str(count / time * 100) + "% --> " + x + " + " + y + " + " + z
-										txt.write(x + " + " + y + " + " + z + "\n")
-										txt.write(headline + "\n\n")
-										txt.flush()
+				for headline in news:
+					# check if not doubles/triples
+					if x != y and x != z and y != z:
+
+						if x in headline and \
+						   y in headline and \
+						   z in headline:
+							print x + " + " + y + " + " + z
+							txt.write(x + " + " + y + " + " + z + "\n")
+							txt.write(headline + "\n\n")
+							txt.flush()
 
 	txt.close()
 
