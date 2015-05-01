@@ -30,18 +30,22 @@ def main():
 
 					if y in x:
 						status = False
+						continue
 
 					for control in x:
 						if y in control:
 							status = False
+							continue
 
 						if control in y:
 							status = False
+							continue
 
 
 					for control in x:
 						if control not in headline:
 							status = False
+							continue
 
 					if y in headline and status != False:
 						print test + " " + y
