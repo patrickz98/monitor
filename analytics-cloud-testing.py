@@ -52,7 +52,9 @@ def main():
 						txt.write(test + " " + y + "\n")
 						txt.write(headline + "\n\n")
 						txt.flush()
-						cluster_string2.append(test + " " + y)
+
+						if test + " " + y not in cluster_string2:
+							cluster_string2.append(test + " " + y)
 
 			cluster_string = cluster_string2
 
