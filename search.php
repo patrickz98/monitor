@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Finder</title>
+		<title>News</title>
 		<link rel="icon" type="image/x-icon" href="../news.ico" />
 		<link rel="apple-touch-icon" href="../news.png"/>
 

@@ -1,79 +1,64 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import os
-import re
 import time
-import MySQLdb as mdb
-from collections import OrderedDict
 import sys
 
 import conf
+import mysql
 
-con = conf.con
-bad = conf.bad
-exception = conf.exception
-list = {}
-
-def mysql():
-	Headlines = {}
-	with con:
-
-	    	cur = con.cursor(mdb.cursors.DictCursor)
-	    	cur.execute("SELECT * FROM news%s" % time.strftime("%Y%m%d"))
-
-	    	rows = cur.fetchall()
-
-	    	for row in rows:
-        		Headlines.update({row["Headlines"] : row["Newspaper"]})
-
-			con.commit()
-
-	return Headlines
-
-def mydata():
-	Headlines = {}
-	with con:
-
-	    	cur = con.cursor(mdb.cursors.DictCursor)
-	    	cur.execute("SELECT * FROM data%s" % time.strftime("%Y%m%d"))
-
-	    	rows = cur.fetchall()
-
-	    	for row in rows:
-        		Headlines.update({row["Word"] : row["Cluster"]})
-
-			con.commit()
-
-	return Headlines
-
-news = mysql()
-cluster = mydata()
+news = mysql.get_news(time.strftime("%Y%m%d"))
+cluster = mysql.get_news_data(time.strftime("%Y%m%d"))
 
 def main():
 	global news
 	global cluster
 
+	cluster_string = [x for x in cluster]
+	cluster_string2 = []
+	checked_const = []
+
+	checked_words  = []
 	txt = open("cloud.txt", "w")
-	time = len(cluster) ** 3 * len(news)
+	status = True
 	count = 0
 
-	tmp = []
-
-	for x in cluster:
-		for y in cluster:
-			for z in cluster:
+	for uninportant in range(0, 2):
+		for test in cluster_string:
+			x = test.split(" ")
+			for y in cluster:
+				# print test + " " + y
 				for headline in news:
-					# check if not doubles/triples
-					if x != y and x != z and y != z:
+					status = True
 
-						if x in headline and \
-						   y in headline and \
-						   z in headline:
-							print x + " + " + y + " + " + z
-							txt.write(x + " + " + y + " + " + z + "\n")
-							txt.write(headline + "\n\n")
-							txt.flush()
+					if y in x:
+						status = False
+						continue
+
+					for control in x:
+						if y in control:
+							status = False
+							continue
+
+						if control in y:
+							status = False
+							continue
+
+
+					for control in x:
+						if control not in headline:
+							status = False
+							continue
+
+					if y in headline and status != False:
+						print test + " " + y
+						txt.write(test + " " + y + "\n")
+						txt.write(headline + "\n\n")
+						txt.flush()
+
+						if test + " " + y not in cluster_string2:
+							cluster_string2.append(test + " " + y)
+
+
+		cluster_string = cluster_string2
 
 	txt.close()
-
-main()
