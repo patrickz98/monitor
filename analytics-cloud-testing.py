@@ -21,11 +21,9 @@ def main():
 			if word in headline:
 				cluster_string.append(word)
 
-		if len(cluster_string) >= 3:
-			for fund in cluster_string:
-				sys.stdout.write(fund + " ")
+		if len(cluster_string) >= 4:
 
-			sys.stdout.write("\n")
+			sys.stdout.write(" + ".join(cluster_string) + "\n")
 
 			txt.write(" ".join(cluster_string) + "\n")
 			txt.write(headline + "\n\n")
