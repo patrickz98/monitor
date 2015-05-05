@@ -52,7 +52,8 @@ bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
        "hält", "führt", "Für", "lässt", "hält", "setzen", "sollte", "dann"
        "wohl", "führt", "sicht", "Sicht", "lässt", "hält", "passt",
        "dank", "hoch", "sagen", "Wirt", "inne", "Prof", "schwer",
-       "gleichen", "fallen", "Expo"]
+       "gleichen", "fallen", "Expo", "isst", "Fall", "wenig", "müssen",
+       "großen", "lebe", "kleine", "groß", "hält"]
 
 exception = ["EU", "Eu", "USA", "BND", "IS", "Tod", "CIA", "NSA", "ARD", "ZDF",
 	   		 "Uni", "UNI", "UNO", "CDU", "CSU", "SPD", "AFD", "Afd", "FDP", "Uno",
