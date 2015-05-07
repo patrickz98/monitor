@@ -12,6 +12,16 @@ def table_print(Word):
 
 	print " +" + "---> " + Word
 
+def count_connections(Word1, Word2, cluster_strings):
+	count = 0
+
+	for cluster in cluster_strings:
+		cluster = cluster.split(" ")
+		if Word1 in cluster and Word2 in cluster:
+			count = count + 1
+
+	return count
+
 def print_connections(Word, cluster_strings):
 	tmp = []
 	for cluster in cluster_strings:
@@ -19,7 +29,7 @@ def print_connections(Word, cluster_strings):
 		if Word in cluster:
 			for c in cluster:
 				if c not in tmp:
-					table_print(c)
+					table_print(c + ": " + str(count_connections(Word, c, cluster_strings)))
 					tmp.append(c)
 
 def cluster_analytics(data, cluster_strings):
@@ -31,13 +41,13 @@ def cluster_analytics(data, cluster_strings):
 			if x in cluster:
 
 				if x in set:
-					set[x] = set[x] + 1
+					set.update({ x : set[x] + 1 })
 				else:
 					set.update({ x : 1 })
 
 	for x in set:
 		print
-		print x  + ": " + str(set[x])
+		print x + ": " + str(set[x])
 		print_connections(x, cluster_strings)
 
 def main():
