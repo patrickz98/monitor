@@ -28,7 +28,7 @@ def main():
 		cur.execute("CREATE TABLE news%s(Headlines VARCHAR(300), Newspaper VARCHAR(20), link VARCHAR(400))" % \
     		str(time.strftime("%Y%m%d")))
 
-	sys.stdout.write("%-18s" % "\rtagesspiegel")
+	sys.stdout.write("tagesspiegel\n")
 	sys.stdout.flush()
 	try:
 		tagesspiegel.tagesspiegel()
@@ -36,7 +36,7 @@ def main():
 		sys.stderr.write("\033[91mTagesspiegel Offline\033[0m\n")
 
 
-	sys.stdout.write("%-18s" % "\rWelt")
+	sys.stdout.write("Welt\n")
 	sys.stdout.flush()
 	try:
 		welt.welt()
@@ -44,7 +44,7 @@ def main():
 		sys.stderr.write("\033[91mWelt Offline\033[0m\n")
 
 
-	sys.stdout.write("%-18s" % "\rZeit Online")
+	sys.stdout.write("Zeit Online\n")
 	sys.stdout.flush()
 	try:
 		zeit.zeit()
@@ -52,56 +52,56 @@ def main():
 		sys.stderr.write("\033[91mZeit Online Offline\033[0m\n")
 
 
-	sys.stdout.write("%-18s" % "\rSueddeutsche")
+	sys.stdout.write("Sueddeutsche\n")
 	sys.stdout.flush()
 	try:
 		sueddeutsche.sueddeutsche()
 	except:
 		sys.stderr.write("\033[91mSueddeutsche Offline\033[0m\n")
 
-	sys.stdout.write("%-18s" % "\rStern")
+	sys.stdout.write("Stern\n")
 	sys.stdout.flush()
 	try:
 		stern.stern()
 	except:
 		sys.stderr.write("\033[91mStern Offline\033[0m\n")
 
-	sys.stdout.write("%-18s" % "\rSiegel Online")
+	sys.stdout.write("Siegel Online\n")
 	sys.stdout.flush()
 	try:
 		spon.spon()
 	except:
 		sys.stderr.write("\033[91mSiegel Online Offline\033[0m\n")
 
-	sys.stdout.write("%-18s" % "\rFAZ")
+	sys.stdout.write("FAZ\n")
 	sys.stdout.flush()
 	try:
 		faz.faz()
 	except:
 		sys.stderr.write("\033[91mFaz Offline\033[0m\n")
 
-	sys.stdout.write("%-18s" % "\rntv")
+	sys.stdout.write("ntv\n")
 	sys.stdout.flush()
 	try:
 		ntv.ntv()
 	except:
 		sys.stderr.write("\033[91mn-tv Offline\033[0m\n")
 
-	sys.stdout.write("%-18s" % "\rtaz.de")
+	sys.stdout.write("taz.de\n")
 	sys.stdout.flush()
 	try:
 		taz.taz()
 	except:
 		sys.stderr.write("\033[91mtaz.de Offline\033[0m\n")
 
-	sys.stdout.write("%-18s" % "\rHandelsblatt")
+	sys.stdout.write("Handelsblatt\n")
 	sys.stdout.flush()
 	try:
 		handelsblatt.handelsblatt()
 	except:
 	        sys.stderr.write("\033[91mHandelsblatt Offline\033[0m\n")
 
-	sys.stdout.write("%-18s" % "\rFocus\n")
+	sys.stdout.write("Focus\n")
 	sys.stdout.flush()
 	try:
 		focus.focus()

@@ -5,5 +5,5 @@ import time
 
 while(True):
 	os.popen("python analytics.py").readlines()
-	time.sleep(3600 * 2)
+	time.sleep(3600 * 5)
 #	time.sleep(21600)
