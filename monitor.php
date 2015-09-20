@@ -42,7 +42,7 @@
 			foreach ($clusters as $name => $size)
 			{
 //				$URLname = str_replace("\"", "", iconv("utf-8", "ascii//IGNORE", $name));
-        $URLname = urlencode($name);
+        $URLname = urlencode(base64_encode($name));
 
         $rand = $size * 15;
 				$rand2 = $rand / 2;

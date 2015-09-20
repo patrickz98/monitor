@@ -55,7 +55,7 @@
 
 		<?php
 
-			$search = urldecode($_GET["q"]);
+			$search = urldecode(base64_decode($_GET["q"]));
 			$dbname = 'monitor';
 
 			date_default_timezone_set('UTC');
