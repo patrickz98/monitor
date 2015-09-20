@@ -10,7 +10,7 @@
         <style>
           h1 { font-size: 20px; color: white; }
           div { font-size: 20px; color: white; }
-
+          a { text-decoration: none; }
         </style>
 
 
@@ -44,6 +44,7 @@
 //				$URLname = str_replace("\"", "", iconv("utf-8", "ascii//IGNORE", $name));
                 $URLname = urlencode(base64_encode($name));
 
+                $background_color = "#387dc6";
                 $diameter = sqrt($size) * 60;
 				$radius = $diameter / 2;
 				$TextSize = sqrt($size) * 10;
@@ -53,8 +54,9 @@
 
 				$circle_view = "height: {$diameter}px;
 						width: {$diameter}px;
-						border-radius: {$radius}px;
-						background-color: #7f007f;
+                        border: 10px solid {$background_color};
+						border-radius: 50%;
+						<!-- background-color: {$background_color}; -->
 						text-align: center;
 						font-weight: bold;
 						font-family: helvetica;
@@ -65,14 +67,13 @@
 						font-size: {$TextSize}px;";
 
                 $diameter_Num = sqrt($size) * 20;
-                $radius_Num = $diameter_Num / 2;
                 $TextSize_Num = sqrt($size) * 4;
 
 
                 $circle_view_Num = "height: {$diameter_Num}px;
     				width: {$diameter_Num}px;
-    				border-radius: {$radius_Num}px;
-    				background-color: #7f007f;
+                    border: 5px solid {$background_color};
+    				border-radius: 50%;
     				text-align: center;
     				font-weight: bold;
     				font-family: helvetica;

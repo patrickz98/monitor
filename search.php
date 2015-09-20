@@ -9,15 +9,15 @@
 		<style type="text/css">
 			a { font-family: helvetica; }
 			a:link { text-decoration:none; color:#ffffff; }
-			a:visited { text-decoration:none; color:#7f007f; }
+			a:visited { text-decoration:none; color:#387dc6; }
 
-      h1 {
+      		h1 {
 				font-size: 60px;
 				color: white;
 				height: 150px;
 				width: 150px;
 				border-radius: 75px;
-				background-color: #7f007f;
+				background-color: #387dc6;
 				text-align: center;
 				font-weight: bold;
 				font-family: helvetica;
@@ -30,22 +30,32 @@
 				font-size: 40px;
 				color: white;
 				font-weight: bold;
-				background-color: #7f007f;
+				background-color: #387dc6;
 				height: 60px;
 				line-height: 60px;
+				border-radius: 10px;
 			}
 
-			h3 { font-family: helvetica; font-size: 35px; color: white; font-weight: bold; }
+			h3 {
+				font-family: helvetica;
+				font-size: 35px;
+				color: white;
+				font-weight: bold;
+				background-color: #387dc6;
+				height: 60px;
+				line-height: 60px;
+				border-radius: 10px;
+			}
 
-      div { font-family: helvetica; font-size: 20px; color: white; }
+      		div { font-family: helvetica; font-size: 20px; color: white; }
 
 			hr {
 				border: 0;
 				height: 6px;
-				background-image: -webkit-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
-				background-image:    -moz-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
-				background-image:     -ms-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
-				background-image:      -o-linear-gradient(left, rgba(127,0,127,1), rgba(127,0,127,0.75), rgba(127,0,127,0));
+				background-image: -webkit-linear-gradient(left, rgba(56,125,198,1), rgba(56,125,198,0.75), rgba(56,125,198,0));
+				background-image:    -moz-linear-gradient(left, rgba(56,125,198,1), rgba(56,125,198,0.75), rgba(56,125,198,0));
+				background-image:     -ms-linear-gradient(left, rgba(56,125,198,1), rgba(56,125,198,0.75), rgba(56,125,198,0));
+				background-image:      -o-linear-gradient(left, rgba(56,125,198,1), rgba(56,125,198,0.75), rgba(56,125,198,0));
 			}
 
 		</style>
@@ -122,12 +132,12 @@
 				echo "],\n";
 				echo "\t\t\tdatasets : [{\n";
 				echo "\t\t\tlabel: \"{$search}\",\n";
-				echo "\t\t\tfillColor : \"rgba(127, 0, 127, 0.2)\",\n" .
-							"\t\t\tstrokeColor : \"rgba(127, 0, 127, 1)\",\n" .
-							"\t\t\tpointColor : \"rgba(127, 0, 127, 1)\",\n" .
+				echo "\t\t\tfillColor : \"rgba(56, 125, 198, 0.2)\",\n" .
+							"\t\t\tstrokeColor : \"rgba(56, 125, 198, 1)\",\n" .
+							"\t\t\tpointColor : \"rgba(56, 125, 198, 1)\",\n" .
 							"\t\t\tpointStrokeColor : \"#fff\",\n" .
 							"\t\t\tpointHighlightFill : \"#fff\",\n" .
-							"\t\t\tpointHighlightStroke : \"rgba(127, 0, 127, 1)\",\n" .
+							"\t\t\tpointHighlightStroke : \"rgba(56, 125, 198, 1)\",\n" .
 							"\t\t\tdata : [";
 
 							foreach ($traffic as $date => $size) { echo "'$size', ";}
@@ -173,10 +183,10 @@
 
 			foreach ($news_archiv as $news)
 			{
-					if ($news !== "news" . (String) ($todate - 1))
-					{
-						echo "\t\t<hr>\n";
-					}
+					// if ($news !== "news" . (String) ($todate - 1))
+					// {
+					// 	echo "\t\t<hr>\n";
+					// }
 
 					echo "\t\t<h3>"
 					. substr($news, -2) . "."
