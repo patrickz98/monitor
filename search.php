@@ -4,10 +4,11 @@
 		<title>News</title>
 		<link rel="icon" type="image/x-icon" href="../news.ico" />
 		<link rel="apple-touch-icon" href="../news.png"/>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
 
 		<script src="./Chart.js"></script>
 		<style type="text/css">
-			a { font-family: helvetica; }
+			a { font-family: ubuntu; font-weight: lighter}
 			a:link { text-decoration:none; color:#ffffff; }
 			a:visited { text-decoration:none; color:#387dc6; }
 
@@ -20,13 +21,13 @@
 				background-color: #387dc6;
 				text-align: center;
 				font-weight: bold;
-				font-family: helvetica;
+				font-family: ubuntu;
 				display: inline-block;
 				line-height: 150px;
 			}
 
 			h2 {
-				font-family: helvetica;
+				font-family: ubuntu;
 				font-size: 40px;
 				color: white;
 				font-weight: bold;
@@ -37,7 +38,7 @@
 			}
 
 			h3 {
-				font-family: helvetica;
+				font-family: ubuntu;
 				font-size: 35px;
 				color: white;
 				font-weight: bold;
@@ -47,7 +48,7 @@
 				border-radius: 10px;
 			}
 
-      		div { font-family: helvetica; font-size: 20px; color: white; }
+      		div { font-family: ubuntu; font-size: 20px; color: white; }
 
 			hr {
 				border: 0;

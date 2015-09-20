@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link rel="icon" href="icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="icon-apple.png"/>
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
 
         <style>
           h1 { font-size: 20px; color: white; }
@@ -59,7 +60,7 @@
 						<!-- background-color: {$background_color}; -->
 						text-align: center;
 						font-weight: bold;
-						font-family: helvetica;
+						font-family: ubuntu;
 						color: white;
 						margin: 30px;
 						display: inline-block;
@@ -76,7 +77,7 @@
     				border-radius: 50%;
     				text-align: center;
     				font-weight: bold;
-    				font-family: helvetica;
+    				font-family: ubuntu;
     				color: white;
     				margin: 30px;
     				display: inline-block;
