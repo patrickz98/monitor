@@ -8,10 +8,6 @@ clean:
 	find . -name '*.pyc' -delete
 	find . -name '*html' -delete
 
-clean-web:
-	sudo rm -rf /var/www/odroid/html
-	sudo rm -rf /var/www/patrickz/html
-
 clean-mysql:
 	python cleaner.py
 	python cleaner-db.py
@@ -28,9 +24,13 @@ Chart:
 chown:
 	sudo find . -user root -exec chown odroid:odroid {} \;
 
+chown-web:
+	sudo find /var/www/patrickz/ -user root -exec chown odroid:odroid {} \;
+	sudo find /var/www/odroid/ -user root -exec chown odroid:odroid {} \;
+
 web: Chart
-	sudo cp monitor.php search.php Chart.js /var/www/patrickz/
-	sudo cp monitor.php search.php Chart.js /var/www/odroid/
+	sudo cp monitor.php search.php search-user.php Chart.js /var/www/patrickz/
+	sudo cp monitor.php search.php search-user.php Chart.js /var/www/odroid/
 
 	sudo cp news.png news.ico icon.png icon-apple.png /var/www/patrickz/
 	sudo cp news.png news.ico icon.png icon-apple.png /var/www/odroid/
