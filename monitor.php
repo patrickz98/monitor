@@ -17,6 +17,10 @@
 
 	</head>
     <body style="background: #1F2127">
+        <form action="search-user.php" style="color: white">
+            <input type="text" name="q" value="Search">
+            <input type="submit" value="Submit">
+        </form>
 
 		<?php
 			if (!mysql_connect('odroid-u3.local', 'monitor', 'test123'))

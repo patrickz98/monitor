@@ -61,4 +61,4 @@ bad = ["haelt", "sicher", "tritt", "essen", "rein", "eigene",
 exception = ["EU", "Eu", "USA", "BND", "IS", "Tod", "CIA", "NSA", "ARD", "ZDF",
 	   		 "Uni", "UNI", "UNO", "CDU", "CSU", "SPD", "AFD", "Afd", "FDP", "Uno",
 	   		 "BMW", "PKK", "Dax", "DAX", "IBM", "DDR", "IT", "Mac", "SAP", "RWE",
-	   		 "EZB", "NPD", "MAD", "VW"]
+	   		 "EZB", "NPD", "MAD", "VW", "IAA"]

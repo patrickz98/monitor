@@ -29,8 +29,8 @@ chown-web:
 	sudo find /var/www/odroid/ -user root -exec chown odroid:odroid {} \;
 
 web: Chart
-	sudo cp monitor.php search.php search-user.php Chart.js /var/www/patrickz/
-	sudo cp monitor.php search.php search-user.php Chart.js /var/www/odroid/
+	sudo cp monitor.php search.php search-user.php monitor-json.php Chart.js /var/www/patrickz/
+	sudo cp monitor.php search.php search-user.php monitor-json.php Chart.js /var/www/odroid/
 
 	sudo cp news.png news.ico icon.png icon-apple.png /var/www/patrickz/
 	sudo cp news.png news.ico icon.png icon-apple.png /var/www/odroid/
