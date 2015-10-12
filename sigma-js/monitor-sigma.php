@@ -31,6 +31,7 @@
 	}
 
 	arsort($clusters);
+    $bla = 0;
 
     foreach ($clusters as $name => $name_count)
     {
@@ -38,11 +39,12 @@
 
         $tmp["id"] = utf8_decode(utf8_encode($name));
         $tmp["label"] = $name;
-        $tmp["x"] = rand(0,200);
+        $tmp["x"] = $bla;
         $tmp["y"] = rand(0,100);
         $tmp["size"] = $name_count;
 
         array_push($end["nodes"], $tmp);
+        $bla = $bla + 1;
     }
 
     // echo "<h1>" . count($end["nodes"]) . "</h1>";

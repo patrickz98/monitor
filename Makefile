@@ -35,6 +35,13 @@ sigma-js:
 	sudo chown www-data:www-data /var/www/patrickz/sigma-js/*
     sudo chown www-data:www-data /var/www/odroid/sigma-js/*
 
+d3:
+		sudo cp -r ./linked-cloud /var/www/patrickz/cloud
+		sudo cp -r ./linked-cloud /var/www/odroid/cloud
+
+		sudo chown www-data:www-data /var/www/patrickz/cloud/*
+	    sudo chown www-data:www-data /var/www/odroid/cloud/*
+
 web: Chart
 	sudo cp monitor.php search.php search-user.php monitor-json.php Chart.js /var/www/patrickz/
 	sudo cp monitor.php search.php search-user.php monitor-json.php Chart.js /var/www/odroid/
