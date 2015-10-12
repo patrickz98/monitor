@@ -28,6 +28,13 @@ chown-web:
 	sudo find /var/www/patrickz/ -user root -exec chown odroid:odroid {} \;
 	sudo find /var/www/odroid/ -user root -exec chown odroid:odroid {} \;
 
+sigma-js:
+	sudo cp -r ./sigma-js /var/www/patrickz/data
+	sudo cp -r ./sigma-js /var/www/odroid/data
+
+	sudo chown www-data:www-data /var/www/patrickz/sigma-js/*
+    sudo chown www-data:www-data /var/www/odroid/sigma-js/*
+
 web: Chart
 	sudo cp monitor.php search.php search-user.php monitor-json.php Chart.js /var/www/patrickz/
 	sudo cp monitor.php search.php search-user.php monitor-json.php Chart.js /var/www/odroid/

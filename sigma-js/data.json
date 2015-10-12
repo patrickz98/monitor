@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "Fluechtling",
+      "label": "Fluechtling",
+      "x":0,
+      "y":0,
+      "size": 20
+    },
+    {
+      "id": "Merkel",
+      "label": "Merkel",
+      "x":15,
+      "y":6,
+      "size": 2
+    },
+    {
+      "id": "CDU",
+      "label": "CDU",
+      "x":10,
+      "y":10,
+      "size": 10
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "CDU",
+      "target": "Merkel"
+    },
+    {
+      "id": "e1",
+      "source": "Merkel",
+      "target": "Fluechtling"
+    },
+    {
+      "id": "e2",
+      "source": "Fluechtling",
+      "target": "CDU"
+  },
+  {
+    "id": "e3",
+    "source": "Fluechtling",
+    "target": "CDU"
+  }
+  ]
+}

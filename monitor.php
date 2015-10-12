@@ -59,9 +59,12 @@
 
 				$circle_view = "height: {$diameter}px;
 						width: {$diameter}px;
-                        border: 10px solid {$background_color};
+                        border: 10px;
+                        border-style: double;
 						border-radius: 50%;
-						<!-- background-color: {$background_color}; -->
+
+                        border-color: #387dc6;
+						<!-- background: linear-gradient(#1F2127, #387dc6); -->
 						text-align: center;
 						font-weight: bold;
 						font-family: ubuntu;
